@@ -62,9 +62,15 @@ The following components are configured using user-authored configuration files 
   * `assets/wallpapers/cat-street.jpg`
   * `assets/wallpapers/laundry.jpg` (Active reference wallpaper)
   * `assets/wallpapers/sushi.jpg`
-* **Source & Provenance:** Third-party digital artwork circulating in desktop customization communities (e.g. r/unixporn, Wallhaven). Original artists are unverified and no verifiable Creative Commons or public domain license is attached.
-* **Redistribution Policy:** Under open-source licensing standards, disclaimers or opt-out notices do not confer redistribution rights. Consequently, **these third-party wallpaper files are flagged and excluded from the public Git release**.
-* **User Guidance:** Users provide their own wallpaper by placing any image at `~/.config/backgrounds/wallpaper.jpg`. See [`assets/wallpapers/README.md`](../assets/wallpapers/README.md).
+* **Source Platforms & Provenance:**
+  * The three digital wallpaper files originated from [CozyPixels](https://github.com/SleepyCatHey/CozyPixels) and [Wallhaven](https://wallhaven.cc/).
+  * As the CozyPixels repository explicitly acknowledges, much of its collected artwork originates from various creators whose individual original sources and licenses remain untracked.
+  * No verifiable Creative Commons or public domain license is attached to these images.
+* **Redistribution Policy:**
+  * In strict compliance with open-source licensing standards and copyright law, aggregating or community-sharing platforms do not confer redistribution permission without an explicit open license.
+  * Consequently, **all three third-party wallpaper files are strictly excluded from Git staging and public distribution**, and are preserved solely on the author's local workstation.
+* **User Guidance:**
+  * Users provide their own wallpaper by placing any image at `~/.config/backgrounds/wallpaper.jpg`. See [`assets/wallpapers/README.md`](../assets/wallpapers/README.md).
 
 ---
 

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Comprehensive repository validator checking syntax, integrity, assets, and portability
+# Comprehensive repository validator checking syntax, integrity, assets, and portability.
+# Designed to run portably on standard environments (including Ubuntu CI and Arch Linux).
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -9,7 +10,7 @@ source "$SCRIPT_DIR/lib/paths.sh"
 ERRORS=0
 WARNINGS=0
 
-log_info "=== Validating arch-files Repository Integrity ==="
+log_info "=== Validating arch-files Repository Integrity (Portable Checks) ==="
 
 # 1. Shell Syntax Validation (bash -n)
 log_info "1. Checking Shell Scripts Syntax..."
@@ -22,8 +23,19 @@ while IFS= read -r sh_file; do
     fi
 done < <(find "$REPO_ROOT/scripts" "$REPO_ROOT/configs/misc/bin" "$REPO_ROOT/configs/lockscreen" -type f \( -name "*.sh" -o \( -perm -111 ! -name "*.*" \) \))
 
-# 2. JSON Validation (python3 -m json.tool)
-log_info "2. Checking JSON Manifests..."
+# 2. Python Scripts Syntax Validation (python3 -m py_compile)
+log_info "2. Checking Python Scripts Syntax..."
+while IFS= read -r py_file; do
+    if python3 -m py_compile "$py_file" >/dev/null 2>&1; then
+        log_success "Python syntax valid: ${py_file#$REPO_ROOT/}"
+    else
+        log_error "Python syntax error: ${py_file#$REPO_ROOT/}"
+        ERRORS=$((ERRORS + 1))
+    fi
+done < <(find "$REPO_ROOT" -type f -name "*.py" ! -path "*/.git/*")
+
+# 3. JSON Validation (python3 -m json.tool)
+log_info "3. Checking JSON Manifests..."
 while IFS= read -r json_file; do
     if python3 -m json.tool "$json_file" >/dev/null 2>&1; then
         log_success "JSON valid: ${json_file#$REPO_ROOT/}"
@@ -33,39 +45,13 @@ while IFS= read -r json_file; do
     fi
 done < <(find "$REPO_ROOT" -type f -name "*.json" ! -path "*/.git/*")
 
-# 3. Niri Configuration Validation
-log_info "3. Checking Niri Compositor Configuration..."
-if command -v niri >/dev/null 2>&1; then
-    if niri validate --config "$CONFIGS_DIR/niri/config.kdl" >/dev/null 2>&1; then
-        log_success "Niri configuration is valid"
-    else
-        log_error "Niri configuration validation failed"
-        ERRORS=$((ERRORS + 1))
-    fi
+# 4. Systemd User Units Static Validation
+log_info "4. Checking Systemd User Service Units Structure & Syntax..."
+if python3 "$SCRIPT_DIR/validate-units.py"; then
+    log_success "All systemd user service units passed structural and directive validation."
 else
-    log_warn "Niri validator not installed on host (skipping live niri validate)"
-    WARNINGS=$((WARNINGS + 1))
-fi
-
-# 4. Systemd User Units Validation
-log_info "4. Checking Systemd User Service Units..."
-if command -v systemd-analyze >/dev/null 2>&1; then
-    UNIT_ERRORS=0
-    for s_file in "$CONFIGS_DIR/misc/systemd-user/"*.service; do
-        [[ -L "$s_file" ]] && continue # Skip masked units pointing to /dev/null
-        if ! systemd-analyze verify --user "$s_file" >/dev/null 2>&1; then
-            log_error "Systemd unit invalid: $(basename "$s_file")"
-            UNIT_ERRORS=$((UNIT_ERRORS + 1))
-        fi
-    done
-    if [[ $UNIT_ERRORS -eq 0 ]]; then
-        log_success "All systemd user service units are valid"
-    else
-        ERRORS=$((ERRORS + UNIT_ERRORS))
-    fi
-else
-    log_warn "systemd-analyze not installed on host"
-    WARNINGS=$((WARNINGS + 1))
+    log_error "Systemd unit validation failed."
+    ERRORS=$((ERRORS + 1))
 fi
 
 # 5. GTK Referenced Assets Verification
@@ -124,7 +110,7 @@ LEAKED_PATHS=0
 while IFS= read -r match; do
     log_error "Hardcoded path found: $match"
     LEAKED_PATHS=$((LEAKED_PATHS + 1))
-done < <(grep -rn --exclude="validate.sh" "$TARGET_USER_PATTERN" "$CONFIGS_DIR" "$REPO_ROOT/scripts" "$SYSTEM_DIR" "$UPSTREAM_DIR/modesty/additions" "$UPSTREAM_DIR/modesty/patches" 2>/dev/null || true)
+done < <(grep -rn --exclude="validate.sh" --exclude="validate-arch.sh" "$TARGET_USER_PATTERN" "$CONFIGS_DIR" "$REPO_ROOT/scripts" "$SYSTEM_DIR" "$UPSTREAM_DIR/modesty/additions" "$UPSTREAM_DIR/modesty/patches" 2>/dev/null || true)
 
 if [[ $LEAKED_PATHS -eq 0 ]]; then
     log_success "Zero hardcoded user paths in active configurations and scripts."
@@ -144,10 +130,24 @@ for prof in default minimal development; do
     fi
 done
 
+# 9. Target-Environment Validation (optional / run if target tools are present)
+log_info "9. Checking Target-Environment Tooling (Optional in portable mode)..."
+if command -v niri >/dev/null 2>&1; then
+    if niri validate --config "$CONFIGS_DIR/niri/config.kdl" >/dev/null 2>&1; then
+        log_success "Niri configuration is valid (live check)"
+    else
+        log_error "Niri configuration validation failed"
+        ERRORS=$((ERRORS + 1))
+    fi
+else
+    log_warn "Niri validator not found on this runner (validated in Arch environment CI job)"
+    WARNINGS=$((WARNINGS + 1))
+fi
+
 # Final Summary
 echo ""
 if [[ $ERRORS -eq 0 ]]; then
-    log_success "=== ALL REPOSITORY VALIDATIONS PASSED (Errors: 0, Warnings: $WARNINGS) ==="
+    log_success "=== ALL PORTABLE REPOSITORY VALIDATIONS PASSED (Errors: 0, Warnings: $WARNINGS) ==="
     exit 0
 else
     log_error "=== VALIDATION FAILED WITH $ERRORS ERROR(S) (Warnings: $WARNINGS) ==="

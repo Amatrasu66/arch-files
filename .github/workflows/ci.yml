@@ -7,16 +7,35 @@ on:
     branches: [ main ]
 
 jobs:
-  validate:
+  portable-validation:
+    name: Portable Repository Validation (Ubuntu)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Run Syntax & JSON Validation
+      - name: Run Portable Validation Suite
         run: |
           bash scripts/validate.sh
+
+  arch-validation:
+    name: Target Environment Validation (Arch Linux)
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:base
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Target Validation Dependencies
+        run: |
+          pacman -Syu --noconfirm --needed bash python niri systemd
+
+      - name: Run Arch Target-Environment Validation
+        run: |
+          bash scripts/validate-arch.sh
