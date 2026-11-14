@@ -20,8 +20,10 @@ jobs:
           python-version: '3.11'
 
       - name: Run Portable Validation Suite
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          bash -x scripts/validate.sh
+          bash scripts/validate.sh
 
   arch-validation:
     name: Target Environment Validation (Arch Linux)
@@ -38,4 +40,4 @@ jobs:
 
       - name: Run Arch Target-Environment Validation
         run: |
-          bash -x scripts/validate-arch.sh
+          bash scripts/validate-arch.sh

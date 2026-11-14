@@ -37,6 +37,22 @@ if command -v systemd-analyze >/dev/null 2>&1; then
     mkdir -p "$XDG_RUNTIME_DIR"
     chmod 700 "$XDG_RUNTIME_DIR"
     
+    # In minimal container environments without quickshell / cliphist AUR packages installed,
+    # provision temporary test stubs for uninstalled AUR/custom binaries so systemd-analyze
+    # can verify directive grammar, targets, and dependencies without failing on missing AUR packages.
+    STUB_DIR="/tmp/test-stubs-$$"
+    mkdir -p "$STUB_DIR"
+    for bin_name in quickshell cliphist; do
+        if ! command -v "$bin_name" >/dev/null 2>&1 && [[ ! -x "/usr/bin/$bin_name" ]]; then
+            cat << 'STUB_EOF' > "$STUB_DIR/$bin_name"
+#!/bin/sh
+exit 0
+STUB_EOF
+            chmod +x "$STUB_DIR/$bin_name"
+        fi
+    done
+    export PATH="$STUB_DIR:$PATH"
+    
     UNIT_ERRORS=0
     for s_file in "$CONFIGS_DIR/misc/systemd-user/"*.service; do
         [[ -L "$s_file" ]] && continue
@@ -48,6 +64,8 @@ if command -v systemd-analyze >/dev/null 2>&1; then
             UNIT_ERRORS=$((UNIT_ERRORS + 1))
         fi
     done
+    
+    rm -rf "$STUB_DIR"
     
     if [[ $UNIT_ERRORS -eq 0 ]]; then
         log_success "All systemd user service units passed live systemd-analyze verification."
