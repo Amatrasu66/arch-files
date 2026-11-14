@@ -23,7 +23,8 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          bash scripts/validate.sh
+          bash scripts/validate.sh > /tmp/validate.log 2>&1 || (cat /tmp/validate.log; exit 1)
+          cat /tmp/validate.log
 
   arch-validation:
     name: Target Environment Validation (Arch Linux)
@@ -40,4 +41,5 @@ jobs:
 
       - name: Run Arch Target-Environment Validation
         run: |
-          bash scripts/validate-arch.sh
+          bash scripts/validate-arch.sh > /tmp/validate-arch.log 2>&1 || (cat /tmp/validate-arch.log; exit 1)
+          cat /tmp/validate-arch.log
