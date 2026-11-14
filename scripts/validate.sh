@@ -110,7 +110,7 @@ LEAKED_PATHS=0
 while IFS= read -r match; do
     log_error "Hardcoded path found: $match"
     LEAKED_PATHS=$((LEAKED_PATHS + 1))
-done < <(grep -rn --exclude="validate.sh" --exclude="validate-arch.sh" "$TARGET_USER_PATTERN" "$CONFIGS_DIR" "$REPO_ROOT/scripts" "$SYSTEM_DIR" "$UPSTREAM_DIR/modesty/additions" "$UPSTREAM_DIR/modesty/patches" --binary-files=without-match 2>/dev/null || true)
+done < <(grep -rn --exclude="validate.sh" --exclude="validate-arch.sh" "$TARGET_USER_PATTERN" "$CONFIGS_DIR" "$REPO_ROOT/scripts" "$SYSTEM_DIR" "$UPSTREAM_DIR/modesty/additions" "$UPSTREAM_DIR/modesty/patches" --binary-files=without-match || true)
 
 if [[ $LEAKED_PATHS -eq 0 ]]; then
     log_success "Zero hardcoded user paths in active configurations and scripts."
@@ -129,20 +129,6 @@ for prof in default minimal development; do
         ERRORS=$((ERRORS + 1))
     fi
 done
-
-# 9. Target-Environment Validation (optional / run if target tools are present)
-log_info "9. Checking Target-Environment Tooling (Optional in portable mode)..."
-if command -v niri >/dev/null 2>&1; then
-    if niri validate --config "$CONFIGS_DIR/niri/config.kdl" >/dev/null 2>&1; then
-        log_success "Niri configuration is valid (live check)"
-    else
-        log_error "Niri configuration validation failed"
-        ERRORS=$((ERRORS + 1))
-    fi
-else
-    log_warn "Niri validator not found on this runner (validated in Arch environment CI job)"
-    WARNINGS=$((WARNINGS + 1))
-fi
 
 # Final Summary
 echo ""

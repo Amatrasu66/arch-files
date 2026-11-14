@@ -37,21 +37,34 @@ if command -v systemd-analyze >/dev/null 2>&1; then
     mkdir -p "$XDG_RUNTIME_DIR"
     chmod 700 "$XDG_RUNTIME_DIR"
     
-    # In minimal container environments without quickshell / cliphist AUR packages installed,
-    # provision temporary test stubs for uninstalled AUR/custom binaries so systemd-analyze
-    # can verify directive grammar, targets, and dependencies without failing on missing AUR packages.
+    # In container or non-root environments without specific AUR binaries installed,
+    # provision temporary test stubs for missing binaries in a dedicated directory and add to PATH.
+    # When running as root (e.g. in standard CI container), also link into /usr/bin if needed.
     STUB_DIR="/tmp/test-stubs-$$"
     mkdir -p "$STUB_DIR"
-    for bin_name in quickshell cliphist; do
-        if ! command -v "$bin_name" >/dev/null 2>&1 && [[ ! -x "/usr/bin/$bin_name" ]]; then
+    
+    # User-space binaries expected in ~/.local/bin
+    mkdir -p "${HOME}/.local/bin"
+    if [[ ! -e "${HOME}/.local/bin/session-inactivity-manager" ]]; then
+        ln -sf "$CONFIGS_DIR/misc/bin/session-inactivity-manager" "${HOME}/.local/bin/session-inactivity-manager"
+    fi
+    if [[ ! -e "${HOME}/.local/bin/swayidle" ]] && command -v swayidle >/dev/null 2>&1; then
+        ln -sf "$(command -v swayidle)" "${HOME}/.local/bin/swayidle"
+    fi
+    
+    for bin_name in quickshell cliphist swayidle; do
+        if ! command -v "$bin_name" >/dev/null 2>&1; then
             cat << 'STUB_EOF' > "$STUB_DIR/$bin_name"
 #!/bin/sh
 exit 0
 STUB_EOF
             chmod +x "$STUB_DIR/$bin_name"
+            if [[ $EUID -eq 0 && ! -e "/usr/bin/$bin_name" ]]; then
+                ln -sf "$STUB_DIR/$bin_name" "/usr/bin/$bin_name"
+            fi
         fi
     done
-    export PATH="$STUB_DIR:$PATH"
+    export PATH="$STUB_DIR:${HOME}/.local/bin:$PATH"
     
     UNIT_ERRORS=0
     for s_file in "$CONFIGS_DIR/misc/systemd-user/"*.service; do
