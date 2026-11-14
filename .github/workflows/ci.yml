@@ -23,7 +23,16 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          bash scripts/validate.sh
+          python3 -c "
+          import subprocess
+          res = subprocess.run(['bash', 'scripts/validate.sh'], capture_output=True, text=True)
+          with open(r'$GITHUB_STEP_SUMMARY', 'w') as f:
+              f.write('### Portable Validation Output\n```\n' + res.stdout + '\n' + res.stderr + '\n```')
+          print(res.stdout)
+          if res.stderr:
+              print(res.stderr)
+          exit(res.returncode)
+          "
 
   arch-validation:
     name: Target Environment Validation (Arch Linux)
@@ -40,4 +49,13 @@ jobs:
 
       - name: Run Arch Target-Environment Validation
         run: |
-          bash scripts/validate-arch.sh
+          python3 -c "
+          import subprocess
+          res = subprocess.run(['bash', 'scripts/validate-arch.sh'], capture_output=True, text=True)
+          with open(r'$GITHUB_STEP_SUMMARY', 'w') as f:
+              f.write('### Arch Validation Output\n```\n' + res.stdout + '\n' + res.stderr + '\n```')
+          print(res.stdout)
+          if res.stderr:
+              print(res.stderr)
+          exit(res.returncode)
+          "
