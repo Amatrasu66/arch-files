@@ -1,0 +1,18 @@
+[Unit]
+Description=Modesty Dynamic Island Desktop Shell (QuickShell)
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/quickshell
+Restart=on-failure
+RestartSec=1s
+Environment=PATH=%h/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin
+Environment=QT_QUICK_CONTROLS_STYLE=Basic
+Environment=QSG_USE_SIMPLE_ANIMATION_DRIVER=1
+Environment=LD_LIBRARY_PATH=%h/.local/lib
+Environment=QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+
+[Install]
+WantedBy=graphical-session.target

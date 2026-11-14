@@ -1,0 +1,171 @@
+/* ~/.config/waybar/style.css - Refined Dark Minimalist Top Bar (Ref Image 1 Aesthetic) */
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Adwaita Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+/* 
+ * AUTO-HIDE & EDGE-TRIGGERED HOVER REVEAL
+ * When collapsed, Waybar sits as a 2px invisible trigger strip at y=0.
+ * The module container is shifted -34px off-screen.
+ * On mouse hover at the top edge, the bar smoothly expands down and modules slide in.
+ */
+window#waybar {
+    background: rgba(22, 22, 30, 0.94);
+    border-bottom: 1px solid rgba(187, 154, 247, 0.20);
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+window#waybar > box {
+    padding: 3px 8px;
+    opacity: 1;
+    margin-top: 0;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Common Pill Module Styling --- */
+#custom-launcher,
+#workspaces,
+#window,
+#pulseaudio,
+#network,
+#bluetooth,
+#custom-quicksettings,
+#clock,
+#custom-power {
+    background: #1e1e2e;
+    color: #c0caf5;
+    padding: 2px 10px;
+    margin: 2px 3px;
+    border-radius: 12px;
+    border: 1px solid rgba(187, 154, 247, 0.12);
+}
+
+/* --- Left: Launcher & Workspaces --- */
+#custom-launcher {
+    background: #28283e;
+    color: #bb9af7;
+    font-size: 14px;
+    padding: 2px 10px;
+}
+
+#custom-launcher:hover {
+    background: #bb9af7;
+    color: #16161e;
+}
+
+#workspaces {
+    padding: 2px 4px;
+}
+
+#workspaces button {
+    color: #7982a9;
+    padding: 0 6px;
+    margin: 0 2px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+#workspaces button:hover {
+    background: rgba(187, 154, 247, 0.25);
+    color: #c0caf5;
+}
+
+#workspaces button.active,
+#workspaces button.focused {
+    background: #bb9af7;
+    color: #16161e;
+    font-weight: 700;
+}
+
+/* --- Center: Window Title --- */
+#window {
+    background: #1a1a28;
+    color: #cfc9e9;
+    padding: 2px 14px;
+    border: 1px solid rgba(187, 154, 247, 0.18);
+}
+
+window#waybar.empty #window {
+    background: transparent;
+    border: none;
+}
+
+/* --- Right Modules --- */
+#pulseaudio {
+    color: #7dcfff;
+}
+
+#pulseaudio.muted {
+    color: #565f89;
+    background: #161622;
+}
+
+#network {
+    color: #73daca;
+}
+
+#network.disconnected {
+    color: #f7768e;
+}
+
+#bluetooth {
+    color: #7aa2f7;
+    padding: 2px 8px;
+}
+
+#bluetooth.disabled {
+    color: #565f89;
+}
+
+#custom-quicksettings {
+    color: #bb9af7;
+    padding: 2px 8px;
+    font-size: 14px;
+}
+
+#custom-quicksettings:hover {
+    background: #bb9af7;
+    color: #16161e;
+}
+
+#clock {
+    background: #242438;
+    color: #c0caf5;
+    font-weight: 600;
+}
+
+/* --- Far Right: Power Button (Reference 1 Signature Accent) --- */
+#custom-power {
+    background: #f7768e;
+    color: #16161e;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 2px 11px;
+    border: none;
+}
+
+#custom-power:hover {
+    background: #ff7a93;
+    color: #ffffff;
+}
+
+/* --- Tooltips --- */
+tooltip {
+    background: #16161e;
+    border: 1px solid #bb9af7;
+    border-radius: 8px;
+    padding: 6px;
+    color: #c0caf5;
+}
+
+tooltip label {
+    color: #c0caf5;
+    font-family: "Adwaita Mono", monospace;
+    font-size: 12px;
+}

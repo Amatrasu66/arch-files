@@ -1,0 +1,19 @@
+[Unit]
+Description=Idle and Session Power Manager for Wayland (swayidle)
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+[Service]
+Type=simple
+Environment="PATH=%h/.local/bin:/usr/local/bin:/usr/bin"
+ExecStartPre=-%h/.local/bin/session-inactivity-manager on-init
+ExecStart=%h/.local/bin/swayidle -w -C %h/.config/swayidle/config
+Restart=on-failure
+RestartSec=5s
+Slice=app.slice
+
+[Install]
+WantedBy=graphical-session.target

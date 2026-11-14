@@ -1,0 +1,16 @@
+{
+  "name": "minimal",
+  "display_name": "Minimal Niri Wayland Environment",
+  "description": "Essential core system and scrollable tiling window manager with lightweight terminal, application launcher, and shell. Omits dynamic island shell, heavy development suites, and extra browsers.",
+  "target_compositor": "niri",
+  "shell_framework": "none",
+  "theme": "catppuccin-mocha",
+  "modules": [
+    "system",
+    "environment",
+    "niri",
+    "terminal",
+    "launcher",
+    "shell"
+  ]
+}

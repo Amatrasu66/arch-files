@@ -1,0 +1,15 @@
+[Default Applications]
+text/html=brave-browser.desktop
+x-scheme-handler/http=brave-browser.desktop
+x-scheme-handler/https=brave-browser.desktop
+x-scheme-handler/about=brave-browser.desktop
+x-scheme-handler/unknown=brave-browser.desktop
+inode/directory=thunar.desktop
+x-scheme-handler/antigravity=antigravity.desktop
+text/markdown=nvim.desktop
+x-scheme-handler/opencode=ai.opencode.desktop.desktop
+x-scheme-handler/mailto=helium.desktop
+
+[Added Associations]
+x-scheme-handler/antigravity=antigravity.desktop;
+text/markdown=nvim.desktop;

@@ -1,0 +1,22 @@
+# ~/.config/swayidle/config
+# Inactivity & Power Management Daemon Configuration for Niri / Wayland
+#
+# Timeline:
+#  - 10 minutes (600s):   Lock screen
+#  - 60 minutes (3600s):  Suspend computer (pre-locked)
+#  - 359 minutes (21540s): Visible warning notification (60s countdown)
+#  - 360 minutes (21600s): Clean system shutdown
+
+# Inactivity Events
+timeout 600 'session-inactivity-manager on-idle-10m' resume 'session-inactivity-manager on-user-activity'
+timeout 3600 'session-inactivity-manager on-idle-1h' resume 'session-inactivity-manager on-user-activity'
+timeout 21540 'session-inactivity-manager on-idle-6h-warning' resume 'session-inactivity-manager on-user-activity'
+timeout 21600 'session-inactivity-manager on-idle-6h-shutdown' resume 'session-inactivity-manager on-user-activity'
+
+# System Sleep & Wake Hooks
+before-sleep 'session-inactivity-manager on-before-sleep'
+after-resume 'session-inactivity-manager on-resume'
+
+# Session Lock & Unlock Hooks
+lock 'session-inactivity-manager on-lock'
+unlock 'session-inactivity-manager on-user-activity'

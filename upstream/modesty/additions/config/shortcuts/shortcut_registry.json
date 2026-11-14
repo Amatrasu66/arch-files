@@ -1,0 +1,4609 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-11-09T11:42:45Z",
+  "total": 298,
+  "categories": [
+    "System & Desktop",
+    "Niri Window Management",
+    "Workspaces",
+    "Modesty Dynamic Island",
+    "Quick Settings",
+    "Media & Audio",
+    "Display & Brightness",
+    "Power & Session",
+    "Kitty Terminal",
+    "Zsh & Shell",
+    "Neovim & LazyVim",
+    "Git & LazyGit",
+    "OpenCode CLI",
+    "Antigravity CLI",
+    "Development Tools",
+    "Browsers",
+    "File Manager",
+    "Screenshots & Utilities"
+  ],
+  "shortcuts": [
+    {
+      "id": "modesty.island.launcher",
+      "keys": [
+        "Super",
+        "A"
+      ],
+      "action": "Application Launcher",
+      "description": "Opens the Modesty fast application grid",
+      "category": "System & Desktop",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "app.fuzzel.launch",
+      "keys": [
+        "Super",
+        "D"
+      ],
+      "action": "Application Launcher (Fuzzel)",
+      "description": "Launches the Fuzzel Wayland dmenu-style fuzzy app search",
+      "category": "System & Desktop",
+      "application": "Fuzzel",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "app.fuzzel.launch_super_space",
+      "keys": [
+        "Super",
+        "Space"
+      ],
+      "action": "Application Launcher (Fuzzel)",
+      "description": "Launches the Fuzzel Wayland dmenu-style fuzzy app search",
+      "category": "System & Desktop",
+      "application": "Fuzzel",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "system.clipboard.history",
+      "keys": [
+        "Super",
+        "V"
+      ],
+      "action": "Clipboard History (cliphist)",
+      "description": "Opens the Fuzzel clipboard history manager and picker",
+      "category": "System & Desktop",
+      "application": "cliphist",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "fuzzel.close",
+      "keys": [
+        "Esc"
+      ],
+      "action": "Close Fuzzel",
+      "description": "Closes the application runner without action",
+      "category": "System & Desktop",
+      "application": "Fuzzel",
+      "scope": "application",
+      "source": "Fuzzel documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "fuzzel.next_item",
+      "keys": [
+        "Down"
+      ],
+      "action": "Next Result",
+      "description": "Moves selector down (also Ctrl+N or Ctrl+J)",
+      "category": "System & Desktop",
+      "application": "Fuzzel",
+      "scope": "application",
+      "source": "Fuzzel documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "fuzzel.prev_item",
+      "keys": [
+        "Up"
+      ],
+      "action": "Previous Result",
+      "description": "Moves selector up (also Ctrl+P or Ctrl+K)",
+      "category": "System & Desktop",
+      "application": "Fuzzel",
+      "scope": "application",
+      "source": "Fuzzel documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.show-hotkey-overlay",
+      "keys": [
+        "Super",
+        "Shift",
+        "/"
+      ],
+      "action": "Show Niri Hotkey Overlay",
+      "description": "Displays Niri internal keyboard shortcut cheat sheet",
+      "category": "System & Desktop",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.toggle-keyboard-shortcuts-inhibit",
+      "keys": [
+        "Super",
+        "Esc"
+      ],
+      "action": "Toggle Shortcut Inhibitor",
+      "description": "Emergency escape hatch to inhibit/restore compositor binds",
+      "category": "System & Desktop",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.shortcuts.toggle",
+      "keys": [
+        "Super",
+        "K"
+      ],
+      "action": "Universal Shortcut Reference",
+      "description": "Opens the interactive keyboard shortcut reference center",
+      "category": "System & Desktop",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.shortcuts.toggle_super_shift_k",
+      "keys": [
+        "Super",
+        "Shift",
+        "K"
+      ],
+      "action": "Universal Shortcut Reference",
+      "description": "Opens the interactive keyboard shortcut reference center",
+      "category": "System & Desktop",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.center-column",
+      "keys": [
+        "Super",
+        "C"
+      ],
+      "action": "Center Column",
+      "description": "Scrolls workspace horizontally to center the active column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.center-visible-columns",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "C"
+      ],
+      "action": "Center Visible Columns",
+      "description": "Centers all currently visible columns on the screen",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.close-window",
+      "keys": [
+        "Super",
+        "Q"
+      ],
+      "action": "Close Focused Window",
+      "description": "Closes the currently active application window",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.consume-window-into-column",
+      "keys": [
+        "Super",
+        ","
+      ],
+      "action": "Consume Window to Column",
+      "description": "Absorbs adjacent window into the focused column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.consume-or-expel-window-left",
+      "keys": [
+        "Super",
+        "["
+      ],
+      "action": "Consume/Expel Window Left",
+      "description": "Pulls adjacent left window into column or expels it",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.consume-or-expel-window-right",
+      "keys": [
+        "Super",
+        "]"
+      ],
+      "action": "Consume/Expel Window Right",
+      "description": "Pulls adjacent right window into column or expels it",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.switch-preset-column-width",
+      "keys": [
+        "Super",
+        "R"
+      ],
+      "action": "Cycle Column Width",
+      "description": "Cycles column through preset sizes (e.g. 1/3, 1/2, 2/3)",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.switch-preset-column-width-back",
+      "keys": [
+        "Super",
+        "Shift",
+        "R"
+      ],
+      "action": "Cycle Column Width Back",
+      "description": "Cycles column sizes in reverse order",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.set-column-width_+10%",
+      "keys": [
+        "Super",
+        "="
+      ],
+      "action": "Expand Column Width",
+      "description": "Increases the active column width by 10%",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.expand-column-to-available-width",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "F"
+      ],
+      "action": "Expand Column to Space",
+      "description": "Expands column to consume all remaining horizontal space",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.set-window-height_+10%",
+      "keys": [
+        "Super",
+        "Shift",
+        "="
+      ],
+      "action": "Expand Window Height",
+      "description": "Increases the focused window height by 10%",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.expel-window-from-column",
+      "keys": [
+        "Super",
+        "."
+      ],
+      "action": "Expel Window from Column",
+      "description": "Ejects the bottom window out into a new column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-left",
+      "keys": [
+        "Super",
+        "Left"
+      ],
+      "action": "Focus Column Left",
+      "description": "Moves keyboard and window focus to the left column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-left_super_h",
+      "keys": [
+        "Super",
+        "H"
+      ],
+      "action": "Focus Column Left",
+      "description": "Moves keyboard and window focus to the left column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-left_super_wheelscrollleft",
+      "keys": [
+        "Super",
+        "WheelScrollLeft"
+      ],
+      "action": "Focus Column Left",
+      "description": "Moves keyboard and window focus to the left column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-left_super_shift_wheelscrollup",
+      "keys": [
+        "Super",
+        "Shift",
+        "WheelScrollUp"
+      ],
+      "action": "Focus Column Left",
+      "description": "Moves keyboard and window focus to the left column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-right",
+      "keys": [
+        "Super",
+        "Right"
+      ],
+      "action": "Focus Column Right",
+      "description": "Moves keyboard and window focus to the right column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-right_super_l",
+      "keys": [
+        "Super",
+        "L"
+      ],
+      "action": "Focus Column Right",
+      "description": "Moves keyboard and window focus to the right column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-right_super_wheelscrollright",
+      "keys": [
+        "Super",
+        "WheelScrollRight"
+      ],
+      "action": "Focus Column Right",
+      "description": "Moves keyboard and window focus to the right column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-right_super_shift_wheelscrolldown",
+      "keys": [
+        "Super",
+        "Shift",
+        "WheelScrollDown"
+      ],
+      "action": "Focus Column Right",
+      "description": "Moves keyboard and window focus to the right column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-first",
+      "keys": [
+        "Super",
+        "Home"
+      ],
+      "action": "Focus First Column",
+      "description": "Jumps focus to the first column on the workspace",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-column-last",
+      "keys": [
+        "Super",
+        "End"
+      ],
+      "action": "Focus Last Column",
+      "description": "Jumps focus to the last column on the workspace",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-monitor-down",
+      "keys": [
+        "Super",
+        "Shift",
+        "Down"
+      ],
+      "action": "Focus Monitor Down",
+      "description": "Moves focus to the monitor below",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-monitor-down_super_shift_j",
+      "keys": [
+        "Super",
+        "Shift",
+        "J"
+      ],
+      "action": "Focus Monitor Down",
+      "description": "Moves focus to the monitor below",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-monitor-left",
+      "keys": [
+        "Super",
+        "Shift",
+        "Left"
+      ],
+      "action": "Focus Monitor Left",
+      "description": "Moves focus to the monitor on the left",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-monitor-left_super_shift_h",
+      "keys": [
+        "Super",
+        "Shift",
+        "H"
+      ],
+      "action": "Focus Monitor Left",
+      "description": "Moves focus to the monitor on the left",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-monitor-right",
+      "keys": [
+        "Super",
+        "Shift",
+        "Right"
+      ],
+      "action": "Focus Monitor Right",
+      "description": "Moves focus to the monitor on the right",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-monitor-right_super_shift_l",
+      "keys": [
+        "Super",
+        "Shift",
+        "L"
+      ],
+      "action": "Focus Monitor Right",
+      "description": "Moves focus to the monitor on the right",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-monitor-up",
+      "keys": [
+        "Super",
+        "Shift",
+        "Up"
+      ],
+      "action": "Focus Monitor Up",
+      "description": "Moves focus to the monitor above",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.switch-focus-between-floating-and-tiling",
+      "keys": [
+        "Super",
+        "Shift",
+        "V"
+      ],
+      "action": "Focus Tiling / Floating",
+      "description": "Switches keyboard focus between floating and tiled windows",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-window-down",
+      "keys": [
+        "Super",
+        "Down"
+      ],
+      "action": "Focus Window Down",
+      "description": "Moves focus to the window below in the same column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-window-down_super_j",
+      "keys": [
+        "Super",
+        "J"
+      ],
+      "action": "Focus Window Down",
+      "description": "Moves focus to the window below in the same column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-window-up",
+      "keys": [
+        "Super",
+        "Up"
+      ],
+      "action": "Focus Window Up",
+      "description": "Moves focus to the window above in the same column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.fullscreen-window",
+      "keys": [
+        "Super",
+        "Shift",
+        "F"
+      ],
+      "action": "Fullscreen Window",
+      "description": "Toggles true borderless fullscreen display for the window",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Super_Alt_L",
+      "keys": [
+        "Super",
+        "Alt",
+        "L"
+      ],
+      "action": "Lock the Screen (Modesty)",
+      "description": "Trigger: spawn \"lock-session\";",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Super_Alt_Shift_L",
+      "keys": [
+        "Super",
+        "Alt",
+        "Shift",
+        "L"
+      ],
+      "action": "Lock the Screen (Modesty)",
+      "description": "Trigger: spawn \"lock-session\";",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.maximize-column",
+      "keys": [
+        "Super",
+        "F"
+      ],
+      "action": "Maximize Column",
+      "description": "Maximizes current column width while preserving window borders",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.maximize-window-to-edges",
+      "keys": [
+        "Super",
+        "M"
+      ],
+      "action": "Maximize Window to Edges",
+      "description": "Expands window flush to all screen edges without borders",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-left",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Left"
+      ],
+      "action": "Move Column Left",
+      "description": "Shifts the focused column one step to the left",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-left_super_ctrl_h",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "H"
+      ],
+      "action": "Move Column Left",
+      "description": "Shifts the focused column one step to the left",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-left_super_ctrl_wheelscrollleft",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "WheelScrollLeft"
+      ],
+      "action": "Move Column Left",
+      "description": "Shifts the focused column one step to the left",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-left_super_ctrl_shift_wheelscrollup",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Shift",
+        "WheelScrollUp"
+      ],
+      "action": "Move Column Left",
+      "description": "Shifts the focused column one step to the left",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-right",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Right"
+      ],
+      "action": "Move Column Right",
+      "description": "Shifts the focused column one step to the right",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-right_super_ctrl_l",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "L"
+      ],
+      "action": "Move Column Right",
+      "description": "Shifts the focused column one step to the right",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-right_super_ctrl_wheelscrollright",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "WheelScrollRight"
+      ],
+      "action": "Move Column Right",
+      "description": "Shifts the focused column one step to the right",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-right_super_ctrl_shift_wheelscrolldown",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Shift",
+        "WheelScrollDown"
+      ],
+      "action": "Move Column Right",
+      "description": "Shifts the focused column one step to the right",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-to-last",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "End"
+      ],
+      "action": "Move Column to End",
+      "description": "Moves the focused column to the end of the workspace",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-to-first",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Home"
+      ],
+      "action": "Move Column to Start",
+      "description": "Moves the focused column to the beginning of the workspace",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-window-down",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Down"
+      ],
+      "action": "Move Window Down",
+      "description": "Moves the window down within its column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-window-down_super_ctrl_j",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "J"
+      ],
+      "action": "Move Window Down",
+      "description": "Moves the window down within its column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-window-up",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Up"
+      ],
+      "action": "Move Window Up",
+      "description": "Moves the window up within its column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-window-up_super_ctrl_k",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "K"
+      ],
+      "action": "Move Window Up",
+      "description": "Moves the window up within its column",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.set-column-width_-10%",
+      "keys": [
+        "Super",
+        "-"
+      ],
+      "action": "Shrink Column Width",
+      "description": "Decreases the active column width by 10%",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.set-window-height_-10%",
+      "keys": [
+        "Super",
+        "Shift",
+        "-"
+      ],
+      "action": "Shrink Window Height",
+      "description": "Decreases the focused window height by 10%",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.toggle-column-tabbed-display",
+      "keys": [
+        "Super",
+        "W"
+      ],
+      "action": "Toggle Tabbed Display",
+      "description": "Displays windows in current column as vertical tabs",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.toggle-window-floating",
+      "keys": [
+        "Super",
+        "Alt",
+        "V"
+      ],
+      "action": "Toggle Window Floating",
+      "description": "Switches window between tiling column and free floating mode",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.toggle-overview",
+      "keys": [
+        "Super",
+        "O"
+      ],
+      "action": "Toggle Window Overview",
+      "description": "Zoomed-out grid view of all active workspaces and windows",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Shift_Ctrl_Down",
+      "keys": [
+        "Super",
+        "Shift",
+        "Ctrl",
+        "Down"
+      ],
+      "action": "move-column-to-monitor-down",
+      "description": "Trigger: move-column-to-monitor-down;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Shift_Ctrl_J",
+      "keys": [
+        "Super",
+        "Shift",
+        "Ctrl",
+        "J"
+      ],
+      "action": "move-column-to-monitor-down",
+      "description": "Trigger: move-column-to-monitor-down;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Shift_Ctrl_Left",
+      "keys": [
+        "Super",
+        "Shift",
+        "Ctrl",
+        "Left"
+      ],
+      "action": "move-column-to-monitor-left",
+      "description": "Trigger: move-column-to-monitor-left;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Shift_Ctrl_H",
+      "keys": [
+        "Super",
+        "Shift",
+        "Ctrl",
+        "H"
+      ],
+      "action": "move-column-to-monitor-left",
+      "description": "Trigger: move-column-to-monitor-left;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Shift_Ctrl_Right",
+      "keys": [
+        "Super",
+        "Shift",
+        "Ctrl",
+        "Right"
+      ],
+      "action": "move-column-to-monitor-right",
+      "description": "Trigger: move-column-to-monitor-right;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Shift_Ctrl_L",
+      "keys": [
+        "Super",
+        "Shift",
+        "Ctrl",
+        "L"
+      ],
+      "action": "move-column-to-monitor-right",
+      "description": "Trigger: move-column-to-monitor-right;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Shift_Ctrl_Up",
+      "keys": [
+        "Super",
+        "Shift",
+        "Ctrl",
+        "Up"
+      ],
+      "action": "move-column-to-monitor-up",
+      "description": "Trigger: move-column-to-monitor-up;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Shift_Ctrl_K",
+      "keys": [
+        "Super",
+        "Shift",
+        "Ctrl",
+        "K"
+      ],
+      "action": "move-column-to-monitor-up",
+      "description": "Trigger: move-column-to-monitor-up;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Ctrl_R",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "R"
+      ],
+      "action": "reset-window-height",
+      "description": "Trigger: reset-window-height;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Super_Alt_S",
+      "keys": [
+        "Super",
+        "Alt",
+        "S"
+      ],
+      "action": "spawn-sh \"pkill orca || exec orca\"",
+      "description": "Trigger: spawn-sh \"pkill orca || exec orca\";",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.XF86AudioStop",
+      "keys": [
+        "Audio Stop"
+      ],
+      "action": "spawn-sh \"playerctl stop\"",
+      "description": "Trigger: spawn-sh \"playerctl stop\";",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.XF86AudioMicMute",
+      "keys": [
+        "Audio MicMute"
+      ],
+      "action": "spawn-sh \"wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle\"",
+      "description": "Trigger: spawn-sh \"wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle\";",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.bind.Mod_Ctrl_Shift_R",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Shift",
+        "R"
+      ],
+      "action": "switch-preset-window-height",
+      "description": "Trigger: switch-preset-window-height;",
+      "category": "Niri Window Management",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.focus.1",
+      "keys": [
+        "Super",
+        "1"
+      ],
+      "action": "Focus Workspace 1",
+      "description": "Switches view directly to workspace 1",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.focus.2",
+      "keys": [
+        "Super",
+        "2"
+      ],
+      "action": "Focus Workspace 2",
+      "description": "Switches view directly to workspace 2",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.focus.3",
+      "keys": [
+        "Super",
+        "3"
+      ],
+      "action": "Focus Workspace 3",
+      "description": "Switches view directly to workspace 3",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.focus.4",
+      "keys": [
+        "Super",
+        "4"
+      ],
+      "action": "Focus Workspace 4",
+      "description": "Switches view directly to workspace 4",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.focus.5",
+      "keys": [
+        "Super",
+        "5"
+      ],
+      "action": "Focus Workspace 5",
+      "description": "Switches view directly to workspace 5",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.focus.6",
+      "keys": [
+        "Super",
+        "6"
+      ],
+      "action": "Focus Workspace 6",
+      "description": "Switches view directly to workspace 6",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.focus.7",
+      "keys": [
+        "Super",
+        "7"
+      ],
+      "action": "Focus Workspace 7",
+      "description": "Switches view directly to workspace 7",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.focus.8",
+      "keys": [
+        "Super",
+        "8"
+      ],
+      "action": "Focus Workspace 8",
+      "description": "Switches view directly to workspace 8",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.focus.9",
+      "keys": [
+        "Super",
+        "9"
+      ],
+      "action": "Focus Workspace 9",
+      "description": "Switches view directly to workspace 9",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-to-workspace-down",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Page_Down"
+      ],
+      "action": "Move Column Down",
+      "description": "Moves the active column to the workspace below",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-to-workspace-down_super_ctrl_u",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "U"
+      ],
+      "action": "Move Column Down",
+      "description": "Moves the active column to the workspace below",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-to-workspace-down_super_ctrl_wheelscrolldown",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "WheelScrollDown"
+      ],
+      "action": "Move Column Down",
+      "description": "Moves the active column to the workspace below",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-to-workspace-up",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "Page_Up"
+      ],
+      "action": "Move Column Up",
+      "description": "Moves the active column to the workspace above",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-to-workspace-up_super_ctrl_i",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "I"
+      ],
+      "action": "Move Column Up",
+      "description": "Moves the active column to the workspace above",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-column-to-workspace-up_super_ctrl_wheelscrollup",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "WheelScrollUp"
+      ],
+      "action": "Move Column Up",
+      "description": "Moves the active column to the workspace above",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.move.1",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "1"
+      ],
+      "action": "Move Column to Workspace 1",
+      "description": "Transfers the active column directly to workspace 1",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.move.2",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "2"
+      ],
+      "action": "Move Column to Workspace 2",
+      "description": "Transfers the active column directly to workspace 2",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.move.3",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "3"
+      ],
+      "action": "Move Column to Workspace 3",
+      "description": "Transfers the active column directly to workspace 3",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.move.4",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "4"
+      ],
+      "action": "Move Column to Workspace 4",
+      "description": "Transfers the active column directly to workspace 4",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.move.5",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "5"
+      ],
+      "action": "Move Column to Workspace 5",
+      "description": "Transfers the active column directly to workspace 5",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.move.6",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "6"
+      ],
+      "action": "Move Column to Workspace 6",
+      "description": "Transfers the active column directly to workspace 6",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.move.7",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "7"
+      ],
+      "action": "Move Column to Workspace 7",
+      "description": "Transfers the active column directly to workspace 7",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.move.8",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "8"
+      ],
+      "action": "Move Column to Workspace 8",
+      "description": "Transfers the active column directly to workspace 8",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.workspace.move.9",
+      "keys": [
+        "Super",
+        "Ctrl",
+        "9"
+      ],
+      "action": "Move Column to Workspace 9",
+      "description": "Transfers the active column directly to workspace 9",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-workspace-down",
+      "keys": [
+        "Super",
+        "Page_Down"
+      ],
+      "action": "Next Workspace Down",
+      "description": "Navigates to the workspace directly below",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-workspace-down_super_u",
+      "keys": [
+        "Super",
+        "U"
+      ],
+      "action": "Next Workspace Down",
+      "description": "Navigates to the workspace directly below",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-workspace-down_super_wheelscrolldown",
+      "keys": [
+        "Super",
+        "WheelScrollDown"
+      ],
+      "action": "Next Workspace Down",
+      "description": "Navigates to the workspace directly below",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-workspace-up",
+      "keys": [
+        "Super",
+        "Page_Up"
+      ],
+      "action": "Previous Workspace Up",
+      "description": "Navigates to the workspace directly above",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.focus-workspace-up_super_wheelscrollup",
+      "keys": [
+        "Super",
+        "WheelScrollUp"
+      ],
+      "action": "Previous Workspace Up",
+      "description": "Navigates to the workspace directly above",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-workspace-down",
+      "keys": [
+        "Super",
+        "Shift",
+        "Page_Down"
+      ],
+      "action": "Shift Workspace Down",
+      "description": "Swaps the current workspace down in the workspace list",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-workspace-down_super_shift_u",
+      "keys": [
+        "Super",
+        "Shift",
+        "U"
+      ],
+      "action": "Shift Workspace Down",
+      "description": "Swaps the current workspace down in the workspace list",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-workspace-up",
+      "keys": [
+        "Super",
+        "Shift",
+        "Page_Up"
+      ],
+      "action": "Shift Workspace Up",
+      "description": "Swaps the current workspace up in the workspace list",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.move-workspace-up_super_shift_i",
+      "keys": [
+        "Super",
+        "Shift",
+        "I"
+      ],
+      "action": "Shift Workspace Up",
+      "description": "Swaps the current workspace up in the workspace list",
+      "category": "Workspaces",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.calendar",
+      "keys": [
+        "Super",
+        "Shift",
+        "C"
+      ],
+      "action": "Calendar & Reminders",
+      "description": "Opens the integrated calendar and agenda capsule",
+      "category": "Modesty Dynamic Island",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.canvas.toggle",
+      "keys": [
+        "Super",
+        "Shift",
+        "Space"
+      ],
+      "action": "Command Canvas / Search",
+      "description": "Opens the universal desktop search and system query palette",
+      "category": "Modesty Dynamic Island",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.settings",
+      "keys": [
+        "Super",
+        "Shift",
+        "S"
+      ],
+      "action": "Modesty Settings",
+      "description": "Opens the dedicated Modesty desktop customization app",
+      "category": "Modesty Dynamic Island",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.settings_super_shift_,",
+      "keys": [
+        "Super",
+        "Shift",
+        ","
+      ],
+      "action": "Modesty Settings",
+      "description": "Opens the dedicated Modesty desktop customization app",
+      "category": "Modesty Dynamic Island",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.notes",
+      "keys": [
+        "Super",
+        "Alt",
+        "N"
+      ],
+      "action": "Quick Notes",
+      "description": "Opens the slide-out note taking and scratchpad capsule",
+      "category": "Modesty Dynamic Island",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.notes_super_shift_n",
+      "keys": [
+        "Super",
+        "Shift",
+        "N"
+      ],
+      "action": "Quick Notes",
+      "description": "Opens the slide-out note taking and scratchpad capsule",
+      "category": "Modesty Dynamic Island",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.island",
+      "keys": [
+        "Super",
+        "I"
+      ],
+      "action": "Toggle Dynamic Island",
+      "description": "Smoothly reveals or hides the top Dynamic Island capsule",
+      "category": "Modesty Dynamic Island",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.bluetooth",
+      "keys": [
+        "Super",
+        "B"
+      ],
+      "action": "Bluetooth Devices",
+      "description": "Scans and pairs with nearby Bluetooth audio and peripherals",
+      "category": "Quick Settings",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.quicksettings",
+      "keys": [
+        "Super",
+        "S"
+      ],
+      "action": "Control Center / Quick Settings",
+      "description": "Opens or closes the Modesty Quick Settings panel",
+      "category": "Quick Settings",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.notifhistory",
+      "keys": [
+        "Super",
+        "N"
+      ],
+      "action": "Notification Center",
+      "description": "Displays historical desktop alerts and notification toasts",
+      "category": "Quick Settings",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.wifi",
+      "keys": [
+        "Super",
+        "Shift",
+        "W"
+      ],
+      "action": "Wi-Fi Network Menu",
+      "description": "Displays available Wi-Fi access points and signal info",
+      "category": "Quick Settings",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.media",
+      "keys": [
+        "Super",
+        "Shift",
+        "M"
+      ],
+      "action": "Expanded Media Player",
+      "description": "Reveals album artwork, live visualizer and playback controls",
+      "category": "Media & Audio",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "audio.volume.mute",
+      "keys": [
+        "Audio Mute"
+      ],
+      "action": "Mute Audio Output",
+      "description": "Toggles mute for the active audio output sink",
+      "category": "Media & Audio",
+      "application": "PipeWire",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "media.playback.next",
+      "keys": [
+        "Audio Next"
+      ],
+      "action": "Next Track",
+      "description": "Skips forward to the next media track",
+      "category": "Media & Audio",
+      "application": "Media",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "media.playback.playpause",
+      "keys": [
+        "Audio Play"
+      ],
+      "action": "Play / Pause Media",
+      "description": "Toggles playback on the active MPRIS media player",
+      "category": "Media & Audio",
+      "application": "Media",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "media.playback.prev",
+      "keys": [
+        "Audio Prev"
+      ],
+      "action": "Previous Track",
+      "description": "Returns to previous track or restarts current track",
+      "category": "Media & Audio",
+      "application": "Media",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.sound",
+      "keys": [
+        "Super",
+        "Shift",
+        "A"
+      ],
+      "action": "Sound & Volume Controls",
+      "description": "Adjusts active sink volume, streams, and PipeWire routing",
+      "category": "Media & Audio",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "audio.volume.down",
+      "keys": [
+        "Audio LowerVolume"
+      ],
+      "action": "Volume Down (-10%)",
+      "description": "Decreases system default audio sink volume by 10%",
+      "category": "Media & Audio",
+      "application": "PipeWire",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "audio.volume.up",
+      "keys": [
+        "Audio RaiseVolume"
+      ],
+      "action": "Volume Up (+10%)",
+      "description": "Increases system default audio sink volume by 10%",
+      "category": "Media & Audio",
+      "application": "PipeWire",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "display.brightness.down",
+      "keys": [
+        "Brightness Down"
+      ],
+      "action": "Brightness Down (-10%)",
+      "description": "Decreases display backlight level by 10%",
+      "category": "Display & Brightness",
+      "application": "System",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "display.brightness.up",
+      "keys": [
+        "Brightness Up"
+      ],
+      "action": "Brightness Up (+10%)",
+      "description": "Increases display backlight level by 10%",
+      "category": "Display & Brightness",
+      "application": "System",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.display",
+      "keys": [
+        "Super",
+        "Shift",
+        "D"
+      ],
+      "action": "Display & Brightness",
+      "description": "Controls backlight brightness and display settings",
+      "category": "Display & Brightness",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.wallpapers",
+      "keys": [
+        "Super",
+        "Alt",
+        "W"
+      ],
+      "action": "Wallpaper Selector",
+      "description": "Opens the carousel wallpaper switcher in the Dynamic Island",
+      "category": "Display & Brightness",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.power",
+      "keys": [
+        "Super",
+        "Shift",
+        "E"
+      ],
+      "action": "Power & Session Menu",
+      "description": "Opens the shutdown, reboot, suspend, and lock dialog",
+      "category": "Power & Session",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "modesty.island.power_ctrl_alt_delete",
+      "keys": [
+        "Ctrl",
+        "Alt",
+        "Delete"
+      ],
+      "action": "Power & Session Menu",
+      "description": "Opens the shutdown, reboot, suspend, and lock dialog",
+      "category": "Power & Session",
+      "application": "Modesty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.power-off-monitors",
+      "keys": [
+        "Super",
+        "Shift",
+        "P"
+      ],
+      "action": "Power Off Monitors",
+      "description": "Puts display into DPMS sleep immediately",
+      "category": "Power & Session",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.close_window",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "W"
+      ],
+      "action": "Close Split Window",
+      "description": "Closes the focused window split",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.close_tab",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Q"
+      ],
+      "action": "Close Terminal Tab",
+      "description": "Closes the currently focused terminal tab",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.copy",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "C"
+      ],
+      "action": "Copy to Clipboard",
+      "description": "Copies selected text from terminal buffer",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.font_decrease",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "-"
+      ],
+      "action": "Decrease Font Size",
+      "description": "Shrinks terminal typography size",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.next_window",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "]"
+      ],
+      "action": "Focus Next Split Window",
+      "description": "Moves focus to next window split in current tab",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.prev_window",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "["
+      ],
+      "action": "Focus Previous Split Window",
+      "description": "Moves focus to previous window split in current tab",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.font_increase",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "+"
+      ],
+      "action": "Increase Font Size",
+      "description": "Enlarges terminal typography size",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.move_tab_backward",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        ","
+      ],
+      "action": "Move Tab Backward",
+      "description": "Shifts current tab one position to the left",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.move_tab_forward",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "."
+      ],
+      "action": "Move Tab Forward",
+      "description": "Shifts current tab one position to the right",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.new_window",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Enter"
+      ],
+      "action": "New Split Window",
+      "description": "Opens a new window split within current tab",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.new_tab",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "T"
+      ],
+      "action": "New Terminal Tab",
+      "description": "Opens a new tab in current Kitty window",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.next_tab",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Right"
+      ],
+      "action": "Next Tab",
+      "description": "Switches focus to next terminal tab",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.next_layout",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "L"
+      ],
+      "action": "Next Window Layout",
+      "description": "Cycles through available terminal window layouts",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "app.kitty.launch",
+      "keys": [
+        "Super",
+        "T"
+      ],
+      "action": "Open Terminal (Kitty)",
+      "description": "Launches a new Kitty GPU-accelerated terminal window",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.paste",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "V"
+      ],
+      "action": "Paste from Clipboard",
+      "description": "Pastes clipboard content into terminal session",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.paste_selection",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "S"
+      ],
+      "action": "Paste from Primary Selection",
+      "description": "Pastes primary mouse selection buffer into terminal",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.prev_tab",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Left"
+      ],
+      "action": "Previous Tab",
+      "description": "Switches focus to previous terminal tab",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.font_reset",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Backspace"
+      ],
+      "action": "Reset Font Size",
+      "description": "Restores default terminal font size",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.scroll_page_down",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Page_Down"
+      ],
+      "action": "Scroll Page Down",
+      "description": "Scrolls forward one full page in buffer",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.scroll_page_up",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Page_Up"
+      ],
+      "action": "Scroll Page Up",
+      "description": "Scrolls backward one full page in buffer",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.scroll_end",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "End"
+      ],
+      "action": "Scroll to Bottom",
+      "description": "Scrolls terminal view directly to current prompt",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.scroll_home",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Home"
+      ],
+      "action": "Scroll to Top",
+      "description": "Scrolls terminal view directly to the top of buffer",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.search_scrollback",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "/"
+      ],
+      "action": "Search Scrollback",
+      "description": "Search history buffer within pager",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.set_tab_title",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Alt",
+        "T"
+      ],
+      "action": "Set Tab Title",
+      "description": "Prompt to rename active tab title",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.show_scrollback",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "H"
+      ],
+      "action": "Show Scrollback in Pager",
+      "description": "Opens complete terminal scrollback buffer in pager",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "kitty.toggle_fullscreen",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "F11"
+      ],
+      "action": "Toggle Fullscreen",
+      "description": "Toggles terminal OS window full-screen mode",
+      "category": "Kitty Terminal",
+      "application": "Kitty",
+      "scope": "application",
+      "source": "Kitty configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.backward_char",
+      "keys": [
+        "Ctrl",
+        "B"
+      ],
+      "action": "Backward One Character",
+      "description": "Moves cursor one character backward",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.backward_word",
+      "keys": [
+        "Alt",
+        "B"
+      ],
+      "action": "Backward One Word",
+      "description": "Moves cursor backward by one word",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.clear",
+      "keys": [
+        "Ctrl",
+        "L"
+      ],
+      "action": "Clear Screen",
+      "description": "Clears terminal screen while preserving current input",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.backward_kill_word",
+      "keys": [
+        "Ctrl",
+        "W"
+      ],
+      "action": "Delete Word Backward",
+      "description": "Deletes the word preceding the cursor",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.kill_word_forward",
+      "keys": [
+        "Alt",
+        "D"
+      ],
+      "action": "Delete Word Forward",
+      "description": "Deletes the word immediately after the cursor",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.eof_exit",
+      "keys": [
+        "Ctrl",
+        "D"
+      ],
+      "action": "Exit Shell (EOF)",
+      "description": "Closes current shell session or logs out",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.autocomplete",
+      "keys": [
+        "Tab"
+      ],
+      "action": "FZF / Zsh Autocomplete",
+      "description": "Trigger auto-completion for commands, paths, and flags",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.fzf_cd",
+      "keys": [
+        "Alt",
+        "C"
+      ],
+      "action": "FZF Directory Navigation",
+      "description": "Fuzzy find directory and cd into it immediately",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.fzf_file",
+      "keys": [
+        "Ctrl",
+        "T"
+      ],
+      "action": "FZF File Finder",
+      "description": "Fuzzy search files and insert selection into command line",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.history_search",
+      "keys": [
+        "Ctrl",
+        "R"
+      ],
+      "action": "FZF Reverse History Search",
+      "description": "Interactively search command history with fzf widget",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.forward_char",
+      "keys": [
+        "Ctrl",
+        "F"
+      ],
+      "action": "Forward One Character",
+      "description": "Moves cursor one character forward",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.forward_word",
+      "keys": [
+        "Alt",
+        "F"
+      ],
+      "action": "Forward One Word",
+      "description": "Moves cursor forward by one word",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.interrupt",
+      "keys": [
+        "Ctrl",
+        "C"
+      ],
+      "action": "Interrupt Process (SIGINT)",
+      "description": "Sends SIGINT to abort running foreground command",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.end_of_line",
+      "keys": [
+        "Ctrl",
+        "E"
+      ],
+      "action": "Jump to Line End",
+      "description": "Moves cursor to the end of the command line",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.beginning_of_line",
+      "keys": [
+        "Ctrl",
+        "A"
+      ],
+      "action": "Jump to Line Start",
+      "description": "Moves cursor to the beginning of the command line",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.kill_whole_line",
+      "keys": [
+        "Ctrl",
+        "U"
+      ],
+      "action": "Kill Line Backward",
+      "description": "Deletes entire command line up to cursor",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.kill_line",
+      "keys": [
+        "Ctrl",
+        "K"
+      ],
+      "action": "Kill Line Forward",
+      "description": "Deletes text from cursor position to end of line",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.suspend",
+      "keys": [
+        "Ctrl",
+        "Z"
+      ],
+      "action": "Suspend Process (SIGTSTP)",
+      "description": "Sends SIGTSTP to pause and background current process",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "zsh.yank",
+      "keys": [
+        "Ctrl",
+        "Y"
+      ],
+      "action": "Yank Killed Text",
+      "description": "Pastes most recently killed word or line",
+      "category": "Zsh & Shell",
+      "application": "Zsh",
+      "scope": "application",
+      "source": "Zsh keybindings",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.surround_add",
+      "keys": [
+        "g",
+        "s",
+        "a"
+      ],
+      "action": "Add Surrounding Pair",
+      "description": "Mini.surround: wrap text/motion with brackets or quotes",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.close_window",
+      "keys": [
+        "Space",
+        "w",
+        "d"
+      ],
+      "action": "Close Window Split",
+      "description": "Close the currently active window split",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.code_actions",
+      "keys": [
+        "Space",
+        "c",
+        "a"
+      ],
+      "action": "Code Actions",
+      "description": "Show available LSP code actions and quickfixes",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.delete_buffer",
+      "keys": [
+        "Space",
+        "b",
+        "d"
+      ],
+      "action": "Delete Buffer",
+      "description": "Close active buffer without altering window layout",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.surround_delete",
+      "keys": [
+        "g",
+        "s",
+        "d"
+      ],
+      "action": "Delete Surrounding Pair",
+      "description": "Mini.surround: delete surrounding quotes or brackets",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.diagnostics",
+      "keys": [
+        "Space",
+        "x",
+        "x"
+      ],
+      "action": "Diagnostics List",
+      "description": "Toggle Trouble / Snacks diagnostics list",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.explorer",
+      "keys": [
+        "Space",
+        "e"
+      ],
+      "action": "File Explorer (Snacks)",
+      "description": "Toggle file tree explorer in workspace root",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.find_files",
+      "keys": [
+        "Space",
+        "f",
+        "f"
+      ],
+      "action": "Find Files",
+      "description": "Snacks picker to search files by name in current project",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.find_files_root",
+      "keys": [
+        "Space",
+        "Space"
+      ],
+      "action": "Find Files (Root Dir)",
+      "description": "Snacks picker for files across workspace root",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.lsp_references",
+      "keys": [
+        "g",
+        "r"
+      ],
+      "action": "Find References",
+      "description": "Snacks picker for all references of symbol",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.focus_down",
+      "keys": [
+        "Ctrl",
+        "J"
+      ],
+      "action": "Focus Window Down",
+      "description": "Move cursor focus to window split below",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.focus_left",
+      "keys": [
+        "Ctrl",
+        "H"
+      ],
+      "action": "Focus Window Left",
+      "description": "Move cursor focus to window split on the left",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.focus_right",
+      "keys": [
+        "Ctrl",
+        "L"
+      ],
+      "action": "Focus Window Right",
+      "description": "Move cursor focus to window split on the right",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.focus_up",
+      "keys": [
+        "Ctrl",
+        "K"
+      ],
+      "action": "Focus Window Up",
+      "description": "Move cursor focus to window split above",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.format_code",
+      "keys": [
+        "Space",
+        "c",
+        "f"
+      ],
+      "action": "Format Document",
+      "description": "Format buffer with Prettier, LSP, or Conform",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.blame_line",
+      "keys": [
+        "Space",
+        "g",
+        "h",
+        "b"
+      ],
+      "action": "Git Blame Line",
+      "description": "Inspect author, commit hash, and date for current line",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.git_branches",
+      "keys": [
+        "Space",
+        "g",
+        "c"
+      ],
+      "action": "Git Branches (Snacks)",
+      "description": "Snacks picker to list and checkout Git branches",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.git_diff",
+      "keys": [
+        "Space",
+        "g",
+        "d"
+      ],
+      "action": "Git Diff (Hunks)",
+      "description": "Inspect all repository changes and uncommitted hunks",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.git_status",
+      "keys": [
+        "Space",
+        "g",
+        "s"
+      ],
+      "action": "Git Status (Snacks)",
+      "description": "Snacks picker for modified and untracked git files",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.lsp_definition",
+      "keys": [
+        "g",
+        "d"
+      ],
+      "action": "Go to Definition",
+      "description": "Jump to definition of symbol under cursor",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.lsp_implementation",
+      "keys": [
+        "g",
+        "I"
+      ],
+      "action": "Go to Implementation",
+      "description": "Jump to implementation of interface or method",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.lsp_type_definition",
+      "keys": [
+        "g",
+        "y"
+      ],
+      "action": "Go to Type Definition",
+      "description": "Jump to type definition of symbol under cursor",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.live_grep_root",
+      "keys": [
+        "Space",
+        "/"
+      ],
+      "action": "Grep Text (Root Dir)",
+      "description": "Live grep search across all files in workspace root",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.live_grep",
+      "keys": [
+        "Space",
+        "s",
+        "g"
+      ],
+      "action": "Grep Text (Snacks)",
+      "description": "Snacks interactive project-wide text search",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.lsp_hover",
+      "keys": [
+        "Shift",
+        "K"
+      ],
+      "action": "LSP Hover Documentation",
+      "description": "Display symbol type definition and documentation popup",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.lazygit",
+      "keys": [
+        "Space",
+        "g",
+        "g"
+      ],
+      "action": "LazyGit Interface",
+      "description": "Open full-screen LazyGit interface inside Neovim",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.line_diagnostics",
+      "keys": [
+        "Space",
+        "c",
+        "d"
+      ],
+      "action": "Line Diagnostics",
+      "description": "Show diagnostic error details for current line",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.next_buffer",
+      "keys": [
+        "]",
+        "b"
+      ],
+      "action": "Next Buffer",
+      "description": "Jump forward to the next buffer in list",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.next_diagnostic",
+      "keys": [
+        "]",
+        "d"
+      ],
+      "action": "Next Diagnostic",
+      "description": "Jump cursor to next diagnostic error or warning",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.next_hunk",
+      "keys": [
+        "]",
+        "h"
+      ],
+      "action": "Next Git Hunk",
+      "description": "Jump to next modified hunk using Gitsigns",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.list_buffers",
+      "keys": [
+        "Space",
+        "f",
+        "b"
+      ],
+      "action": "Open Buffers",
+      "description": "List and switch active buffers via Snacks picker",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.preview_hunk",
+      "keys": [
+        "Space",
+        "g",
+        "h",
+        "p"
+      ],
+      "action": "Preview Git Hunk",
+      "description": "Show inline diff preview of current git hunk",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.prev_buffer",
+      "keys": [
+        "[",
+        "b"
+      ],
+      "action": "Previous Buffer",
+      "description": "Jump backward to previous buffer in list",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.prev_diagnostic",
+      "keys": [
+        "[",
+        "d"
+      ],
+      "action": "Previous Diagnostic",
+      "description": "Jump cursor to previous diagnostic error or warning",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.prev_hunk",
+      "keys": [
+        "[",
+        "h"
+      ],
+      "action": "Previous Git Hunk",
+      "description": "Jump to previous modified hunk using Gitsigns",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.rename_symbol",
+      "keys": [
+        "Space",
+        "c",
+        "r"
+      ],
+      "action": "Rename Symbol",
+      "description": "Rename symbol across workspace via LSP",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.surround_replace",
+      "keys": [
+        "g",
+        "s",
+        "r"
+      ],
+      "action": "Replace Surrounding Pair",
+      "description": "Mini.surround: change enclosing quotes or brackets",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.reset_hunk",
+      "keys": [
+        "Space",
+        "g",
+        "h",
+        "r"
+      ],
+      "action": "Reset Git Hunk",
+      "description": "Discard uncommitted modifications in current hunk",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.buffer_lines",
+      "keys": [
+        "Space",
+        "s",
+        "b"
+      ],
+      "action": "Search Buffer Lines",
+      "description": "Fuzzy search text lines within current buffer",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.search_replace",
+      "keys": [
+        "Space",
+        "s",
+        "r"
+      ],
+      "action": "Search and Replace",
+      "description": "Interactive search and replace across files (grug-far)",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.snippet_jump_next",
+      "keys": [
+        "Tab"
+      ],
+      "action": "Snippet Next Placeholder",
+      "description": "Blink.cmp: accept suggestion or jump to next snippet tabstop",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.snippet_jump_prev",
+      "keys": [
+        "Shift",
+        "Tab"
+      ],
+      "action": "Snippet Prev Placeholder",
+      "description": "Blink.cmp: jump back to previous snippet tabstop",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.split_below",
+      "keys": [
+        "Space",
+        "w",
+        "-"
+      ],
+      "action": "Split Window Below",
+      "description": "Open horizontal window split below current buffer",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.split_right",
+      "keys": [
+        "Space",
+        "w",
+        "|"
+      ],
+      "action": "Split Window Right",
+      "description": "Open vertical window split to the right of current buffer",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.stage_hunk",
+      "keys": [
+        "Space",
+        "g",
+        "h",
+        "s"
+      ],
+      "action": "Stage Git Hunk",
+      "description": "Stage current git hunk under cursor into Git index",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.other_buffer",
+      "keys": [
+        "Space",
+        "b",
+        "b"
+      ],
+      "action": "Switch to Other Buffer",
+      "description": "Quickly toggle between current and alternate buffer",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.terminal_toggle",
+      "keys": [
+        "Space",
+        "t",
+        "t"
+      ],
+      "action": "Toggle Terminal",
+      "description": "Toggle floating root terminal session",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "nvim.terminal_ctrl_slash",
+      "keys": [
+        "Ctrl",
+        "/"
+      ],
+      "action": "Toggle Terminal (Ctrl+/)",
+      "description": "Universal terminal toggle key combination",
+      "category": "Neovim & LazyVim",
+      "application": "Neovim",
+      "scope": "application",
+      "source": "Neovim / LazyVim",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.conflict_accept_both",
+      "keys": [
+        "b"
+      ],
+      "action": "Accept Both Changes",
+      "description": "In merge conflict view: keep both incoming and local changes",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.amend_commit",
+      "keys": [
+        "Shift",
+        "A"
+      ],
+      "action": "Amend Last Commit",
+      "description": "Amend previously committed changeset without modifying message",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.branch_menu",
+      "keys": [
+        "b"
+      ],
+      "action": "Branch Menu",
+      "description": "Open branch operations menu (switch, merge, rebase)",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.panel_branches",
+      "keys": [
+        "2"
+      ],
+      "action": "Branches Panel",
+      "description": "Jump focus to git branches list panel",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.commit",
+      "keys": [
+        "c"
+      ],
+      "action": "Commit Changes",
+      "description": "Open commit prompt to record staged changes",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.panel_commits",
+      "keys": [
+        "3"
+      ],
+      "action": "Commits Panel",
+      "description": "Jump focus to commit history list panel",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.discard_changes",
+      "keys": [
+        "d"
+      ],
+      "action": "Discard Changes",
+      "description": "Discard uncommitted working tree modifications in file or hunk",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.view_diff",
+      "keys": [
+        "Enter"
+      ],
+      "action": "Drill Down / View Diff",
+      "description": "Enter sub-view to inspect line-by-line file diff or commit",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.fetch",
+      "keys": [
+        "f"
+      ],
+      "action": "Fetch Remotes",
+      "description": "Fetch branch and tag updates from all configured remotes",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.panel_files",
+      "keys": [
+        "1"
+      ],
+      "action": "Files Panel",
+      "description": "Jump focus to files list panel",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.filter_search",
+      "keys": [
+        "/"
+      ],
+      "action": "Filter List",
+      "description": "Search and filter files, commits, or branch list by pattern",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.help",
+      "keys": [
+        "?"
+      ],
+      "action": "Keybindings Help",
+      "description": "Display complete context-sensitive keybinding help cheat sheet",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.merge_branch",
+      "keys": [
+        "m"
+      ],
+      "action": "Merge Branch",
+      "description": "Merge selected branch into checked out branch",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.new_branch",
+      "keys": [
+        "n"
+      ],
+      "action": "New Branch",
+      "description": "Prompt for branch name and create new branch",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.next_panel",
+      "keys": [
+        "]"
+      ],
+      "action": "Next Panel Tab",
+      "description": "Switch focus to next panel tab",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.prev_panel",
+      "keys": [
+        "["
+      ],
+      "action": "Previous Panel Tab",
+      "description": "Switch focus to previous panel tab",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.pull",
+      "keys": [
+        "p"
+      ],
+      "action": "Pull Changes",
+      "description": "Pull and merge/rebase remote commits into current branch",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.push",
+      "keys": [
+        "Shift",
+        "P"
+      ],
+      "action": "Push Commits",
+      "description": "Push commits to tracked upstream remote branch",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.quit",
+      "keys": [
+        "q"
+      ],
+      "action": "Quit LazyGit",
+      "description": "Exit LazyGit interface and return to terminal or Neovim",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.stage_all",
+      "keys": [
+        "a"
+      ],
+      "action": "Stage / Unstage All",
+      "description": "Toggle staged status for all modified files in repository",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.stash",
+      "keys": [
+        "s"
+      ],
+      "action": "Stash Changes",
+      "description": "Stash modified and untracked files into stash list",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.panel_stash",
+      "keys": [
+        "4"
+      ],
+      "action": "Stash Panel",
+      "description": "Jump focus to stash list panel",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.toggle_stage",
+      "keys": [
+        "Space"
+      ],
+      "action": "Toggle Stage File / Hunk",
+      "description": "Stage or unstage selected file or individual diff hunk",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "lazygit.conflict_undo",
+      "keys": [
+        "z"
+      ],
+      "action": "Undo Conflict Resolution",
+      "description": "In merge conflict view: undo last resolved conflict choice",
+      "category": "Git & LazyGit",
+      "application": "LazyGit",
+      "scope": "application",
+      "source": "LazyGit defaults",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "opencode.autocomplete",
+      "keys": [
+        "Tab"
+      ],
+      "action": "Autocomplete / Cycle",
+      "description": "Trigger autocomplete or cycle choices in prompts",
+      "category": "OpenCode CLI",
+      "application": "OpenCode CLI",
+      "scope": "application",
+      "source": "OpenCode CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "opencode.cancel",
+      "keys": [
+        "Ctrl",
+        "C"
+      ],
+      "action": "Cancel Generation",
+      "description": "Abort running response generation or active tool call",
+      "category": "OpenCode CLI",
+      "application": "OpenCode CLI",
+      "scope": "application",
+      "source": "OpenCode CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "opencode.exit",
+      "keys": [
+        "Ctrl",
+        "D"
+      ],
+      "action": "Exit Session",
+      "description": "Close interactive CLI session and exit to shell",
+      "category": "OpenCode CLI",
+      "application": "OpenCode CLI",
+      "scope": "application",
+      "source": "OpenCode CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "opencode.newline",
+      "keys": [
+        "Shift",
+        "Enter"
+      ],
+      "action": "Insert Line Break",
+      "description": "Add a line break in multiline prompt without submitting",
+      "category": "OpenCode CLI",
+      "application": "OpenCode CLI",
+      "scope": "application",
+      "source": "OpenCode CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "opencode.newline_alt",
+      "keys": [
+        "Alt",
+        "Enter"
+      ],
+      "action": "Line Break (Alt)",
+      "description": "Alternative chord for inserting line break in prompt",
+      "category": "OpenCode CLI",
+      "application": "OpenCode CLI",
+      "scope": "application",
+      "source": "OpenCode CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "opencode.slash_menu",
+      "keys": [
+        "/"
+      ],
+      "action": "Slash Command Menu",
+      "description": "Open interactive menu to select commands (/model, /session, /exit)",
+      "category": "OpenCode CLI",
+      "application": "OpenCode CLI",
+      "scope": "application",
+      "source": "OpenCode CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "opencode.submit",
+      "keys": [
+        "Enter"
+      ],
+      "action": "Submit Message",
+      "description": "Submit prompt turn to active OpenCode session",
+      "category": "OpenCode CLI",
+      "application": "OpenCode CLI",
+      "scope": "application",
+      "source": "OpenCode CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "agy.cancel",
+      "keys": [
+        "Ctrl",
+        "C"
+      ],
+      "action": "Cancel Operation",
+      "description": "Cancel current turn, streaming response, or tool run",
+      "category": "Antigravity CLI",
+      "application": "Antigravity CLI",
+      "scope": "application",
+      "source": "Antigravity CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "agy.mode_switch",
+      "keys": [
+        "Shift",
+        "Tab"
+      ],
+      "action": "Cycle Agent Mode",
+      "description": "Cycle execution mode between accept-edits, auto, and plan",
+      "category": "Antigravity CLI",
+      "application": "Antigravity CLI",
+      "scope": "application",
+      "source": "Antigravity CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "agy.exit",
+      "keys": [
+        "Ctrl",
+        "D"
+      ],
+      "action": "Exit CLI Session",
+      "description": "Close interactive session and return to shell",
+      "category": "Antigravity CLI",
+      "application": "Antigravity CLI",
+      "scope": "application",
+      "source": "Antigravity CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "agy.newline",
+      "keys": [
+        "Shift",
+        "Enter"
+      ],
+      "action": "Insert Line Break",
+      "description": "Insert a new line into multiline prompt buffer",
+      "category": "Antigravity CLI",
+      "application": "Antigravity CLI",
+      "scope": "application",
+      "source": "Antigravity CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "agy.history_prev",
+      "keys": [
+        "Up"
+      ],
+      "action": "Previous Prompt",
+      "description": "Navigate backward through interactive prompt history",
+      "category": "Antigravity CLI",
+      "application": "Antigravity CLI",
+      "scope": "application",
+      "source": "Antigravity CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "agy.slash_menu",
+      "keys": [
+        "/"
+      ],
+      "action": "Slash Command Menu",
+      "description": "Open interactive menu to select commands (/model, /clear, /cost)",
+      "category": "Antigravity CLI",
+      "application": "Antigravity CLI",
+      "scope": "application",
+      "source": "Antigravity CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "agy.submit",
+      "keys": [
+        "Enter"
+      ],
+      "action": "Submit Turn",
+      "description": "Submit prompt turn to Antigravity agent",
+      "category": "Antigravity CLI",
+      "application": "Antigravity CLI",
+      "scope": "application",
+      "source": "Antigravity CLI documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "antigravity.command_palette",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "P"
+      ],
+      "action": "Command Palette",
+      "description": "Access all developer editor commands and tools",
+      "category": "Development Tools",
+      "application": "Antigravity",
+      "scope": "application",
+      "source": "Antigravity documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "antigravity.find_in_files",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "F"
+      ],
+      "action": "Find in Workspace Files",
+      "description": "Global multi-file text and regex search",
+      "category": "Development Tools",
+      "application": "Antigravity",
+      "scope": "application",
+      "source": "Antigravity documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "devflow.term_toggle",
+      "keys": [
+        "Space",
+        "t",
+        "t"
+      ],
+      "action": "Neovim Embedded Terminal",
+      "description": "Quick floating terminal popup within editor session",
+      "category": "Development Tools",
+      "application": "Terminal IDE",
+      "scope": "application",
+      "source": "Terminal IDE layout",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "devflow.next_tab",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Right"
+      ],
+      "action": "Next Terminal IDE Tab",
+      "description": "Switch to next stage tab (Editor -> OpenCode -> Antigravity -> Dev Shell)",
+      "category": "Development Tools",
+      "application": "Terminal IDE",
+      "scope": "application",
+      "source": "Terminal IDE layout",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "devflow.prev_tab",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "Left"
+      ],
+      "action": "Previous Terminal IDE Tab",
+      "description": "Switch to previous stage tab in terminal layout",
+      "category": "Development Tools",
+      "application": "Terminal IDE",
+      "scope": "application",
+      "source": "Terminal IDE layout",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "antigravity.quick_open",
+      "keys": [
+        "Ctrl",
+        "P"
+      ],
+      "action": "Quick Open File",
+      "description": "Quickly search and jump to files in workspace",
+      "category": "Development Tools",
+      "application": "Antigravity",
+      "scope": "application",
+      "source": "Antigravity documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "devflow.git_review",
+      "keys": [
+        "Space",
+        "g",
+        "g"
+      ],
+      "action": "Review AI Changes in LazyGit",
+      "description": "Review all AI code modifications in LazyGit before staging",
+      "category": "Development Tools",
+      "application": "Terminal IDE",
+      "scope": "application",
+      "source": "Terminal IDE layout",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "antigravity.terminal_toggle",
+      "keys": [
+        "Ctrl",
+        "`"
+      ],
+      "action": "Toggle Integrated Terminal",
+      "description": "Shows or hides the built-in terminal pane",
+      "category": "Development Tools",
+      "application": "Antigravity",
+      "scope": "application",
+      "source": "Antigravity documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.close_tab",
+      "keys": [
+        "Ctrl",
+        "W"
+      ],
+      "action": "Close Browser Tab",
+      "description": "Closes current browsing tab",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.find_on_page",
+      "keys": [
+        "Ctrl",
+        "F"
+      ],
+      "action": "Find in Page",
+      "description": "Opens search bar to find text on current page",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.focus_address",
+      "keys": [
+        "Ctrl",
+        "L"
+      ],
+      "action": "Focus Address Bar",
+      "description": "Highlights URL bar for quick search or address input",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.hard_reload",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "R"
+      ],
+      "action": "Hard Reload Page",
+      "description": "Refreshes webpage ignoring cached content",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.new_tab",
+      "keys": [
+        "Ctrl",
+        "T"
+      ],
+      "action": "New Browser Tab",
+      "description": "Opens a new browsing tab",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.new_window",
+      "keys": [
+        "Ctrl",
+        "N"
+      ],
+      "action": "New Browser Window",
+      "description": "Opens a new standard browser window",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.new_incognito",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "N"
+      ],
+      "action": "New Private Window",
+      "description": "Opens a private/incognito browsing window",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.reload",
+      "keys": [
+        "Ctrl",
+        "R"
+      ],
+      "action": "Reload Page",
+      "description": "Refreshes active webpage content",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.reopen_tab",
+      "keys": [
+        "Ctrl",
+        "Shift",
+        "T"
+      ],
+      "action": "Reopen Closed Tab",
+      "description": "Restores the most recently closed browsing tab",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "brave.dev_tools",
+      "keys": [
+        "F12"
+      ],
+      "action": "Toggle Developer Tools",
+      "description": "Opens web inspector and developer console",
+      "category": "Browsers",
+      "application": "Brave",
+      "scope": "application",
+      "source": "Brave documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "thunar.location_bar",
+      "keys": [
+        "Ctrl",
+        "L"
+      ],
+      "action": "Edit Location Path",
+      "description": "Focuses path bar to type target directory",
+      "category": "File Manager",
+      "application": "Thunar",
+      "scope": "application",
+      "source": "Thunar documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "thunar.properties",
+      "keys": [
+        "Alt",
+        "Enter"
+      ],
+      "action": "Item Properties",
+      "description": "Displays permissions and size properties for item",
+      "category": "File Manager",
+      "application": "Thunar",
+      "scope": "application",
+      "source": "Thunar documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "thunar.new_tab",
+      "keys": [
+        "Ctrl",
+        "T"
+      ],
+      "action": "New Folder Tab",
+      "description": "Opens a new tab in active Thunar window",
+      "category": "File Manager",
+      "application": "Thunar",
+      "scope": "application",
+      "source": "Thunar documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "thunar.new_window",
+      "keys": [
+        "Ctrl",
+        "N"
+      ],
+      "action": "New Thunar Window",
+      "description": "Opens a new file manager window",
+      "category": "File Manager",
+      "application": "Thunar",
+      "scope": "application",
+      "source": "Thunar documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "thunar.search",
+      "keys": [
+        "Ctrl",
+        "F"
+      ],
+      "action": "Search Files",
+      "description": "Searches files within current directory",
+      "category": "File Manager",
+      "application": "Thunar",
+      "scope": "application",
+      "source": "Thunar documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "thunar.toggle_hidden",
+      "keys": [
+        "Ctrl",
+        "H"
+      ],
+      "action": "Toggle Hidden Files",
+      "description": "Shows or hides dotfiles and hidden folders",
+      "category": "File Manager",
+      "application": "Thunar",
+      "scope": "application",
+      "source": "Thunar documentation",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.screenshot-screen",
+      "keys": [
+        "Ctrl",
+        "Print"
+      ],
+      "action": "Take Fullscreen Screenshot",
+      "description": "Captures the entire active screen immediately",
+      "category": "Screenshots & Utilities",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.screenshot",
+      "keys": [
+        "Print"
+      ],
+      "action": "Take Screenshot (Interactive)",
+      "description": "Interactive screenshot selection tool",
+      "category": "Screenshots & Utilities",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    },
+    {
+      "id": "niri.action.screenshot-window",
+      "keys": [
+        "Alt",
+        "Print"
+      ],
+      "action": "Take Window Screenshot",
+      "description": "Captures the currently focused window",
+      "category": "Screenshots & Utilities",
+      "application": "Niri",
+      "scope": "global",
+      "source": "Niri configuration",
+      "verified": true,
+      "enabled": true
+    }
+  ]
+}

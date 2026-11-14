@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# ~/.local/bin/modesty-clipboard - Wayland Clipboard History Picker via Fuzzel & cliphist
+# Phase 10: Lightweight Wayland Clipboard Manager
+
+set -u
+
+export PATH="$HOME/.local/bin:$PATH"
+
+if ! command -v cliphist >/dev/null 2>&1; then
+    exit 1
+fi
+
+entries=$(cliphist list 2>/dev/null || true)
+
+if [[ -z "$entries" ]]; then
+    echo "Clipboard history is empty" | fuzzel --dmenu \
+        --prompt="Clipboard  ❯ " \
+        --placeholder="Empty history" \
+        --lines=1 \
+        --width=32 >/dev/null 2>&1 || true
+    exit 0
+fi
+
+selected=$(printf '%s\n' "$entries" | fuzzel --dmenu \
+    --with-nth=2 \
+    --prompt="Clipboard  ❯ " \
+    --placeholder="Search history..." \
+    --lines=9 \
+    --width=44 2>/dev/null) || true
+
+if [[ -n "${selected:-}" ]]; then
+    printf '%s' "$selected" | cliphist decode | wl-copy
+fi

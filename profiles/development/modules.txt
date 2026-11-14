@@ -1,0 +1,13 @@
+system
+environment
+niri
+modesty
+terminal
+launcher
+shell
+gtk
+lockscreen
+file-manager
+browsers
+services
+development

@@ -1,0 +1,22 @@
+{
+  "name": "default",
+  "display_name": "Full Arch Wayland Desktop (Niri + Modesty)",
+  "description": "Complete reference desktop configuration featuring Niri scrollable tiling, Modesty dynamic island shell, Kitty terminal with Catppuccin Mocha glassmorphism, Fuzzel launcher, PipeWire multimedia, and power management.",
+  "target_compositor": "niri",
+  "shell_framework": "quickshell",
+  "theme": "catppuccin-mocha",
+  "modules": [
+    "system",
+    "environment",
+    "niri",
+    "modesty",
+    "terminal",
+    "launcher",
+    "shell",
+    "gtk",
+    "lockscreen",
+    "file-manager",
+    "browsers",
+    "services"
+  ]
+}

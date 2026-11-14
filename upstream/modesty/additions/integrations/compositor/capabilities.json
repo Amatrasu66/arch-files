@@ -1,0 +1,48 @@
+{
+  "compositor": "niri",
+  "version": "26.04-1",
+  "protocol": "wayland",
+  "capabilities": {
+    "workspaces": {
+      "supported": true,
+      "source": "niri_ipc_event_stream",
+      "dynamic": true,
+      "actions": ["focus", "move_to_workspace"]
+    },
+    "windows": {
+      "supported": true,
+      "source": "niri_ipc_windows",
+      "actions": ["close", "focus", "fullscreen"]
+    },
+    "monitors": {
+      "supported": true,
+      "source": "niri_ipc_outputs",
+      "actions": ["scale"]
+    },
+    "display": {
+      "supported": true,
+      "primary": "HDMI-A-1",
+      "resolution": "1920x1080@60Hz",
+      "scale": 1.4,
+      "disabledOutputs": ["eDP-1"]
+    },
+    "nightLight": {
+      "supported": true,
+      "backend": "wlsunset"
+    },
+    "globalShortcuts": {
+      "supported": true,
+      "mechanism": "niri_config_ipc"
+    },
+    "layerShell": {
+      "supported": true,
+      "namespace": "modesty-island",
+      "exclusiveZone": true,
+      "inputRegions": true
+    },
+    "sessionLock": {
+      "supported": true,
+      "protocol": "ext-session-lock-v1"
+    }
+  }
+}

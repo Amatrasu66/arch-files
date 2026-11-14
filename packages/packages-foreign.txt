@@ -1,0 +1,7 @@
+android-studio 2026.2.2.8-1
+ani-cli 5.1-1
+brave-bin 1:1.99.55-1
+helium-browser-bin 0.21.1.1-1
+visual-studio-code-bin 1.145.2-1
+yay-bin 13.1.0-1
+zen-browser-bin 1.24.1b-1

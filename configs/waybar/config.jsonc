@@ -1,0 +1,107 @@
+// ~/.config/waybar/config.jsonc - Polished Minimal Dark Niri Waybar
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "exclusive": true,
+    "passthrough": false,
+    "spacing": 6,
+
+    "modules-left": [
+        "custom/launcher",
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "niri/window"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "bluetooth",
+        "custom/quicksettings",
+        "clock",
+        "custom/power"
+    ],
+
+    "custom/launcher": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "fuzzel"
+    },
+
+    "niri/workspaces": {
+        "all-outputs": true,
+        "format": "{index}",
+        "format-icons": {
+            "active": "●",
+            "default": "○"
+        }
+    },
+
+    "niri/window": {
+        "format": "{}",
+        "max-length": 45,
+        "rewrite": {
+            "(.*) — Brave": "󰖟  $1",
+            "(.*) - Antigravity": "󰅩  $1",
+            "kitty": "󰄛  Terminal",
+            "^$": "󰋜  Arch Linux"
+        }
+    },
+
+    "pulseaudio": {
+        "format": "󰕾 {volume}%",
+        "format-muted": "󰝟 Muted",
+        "on-click": "desktop-quick-settings",
+        "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "scroll-step": 5,
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "󰤨  {essid}",
+        "format-ethernet": "󰈀  {ipaddr}",
+        "format-disconnected": "󰤮  Offline",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr} via {gwaddr}",
+        "on-click": "desktop-quick-settings"
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱 {device_alias}",
+        "format-disabled": "󰂲",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n{num_connections} connected",
+        "on-click": "desktop-quick-settings"
+    },
+
+    "custom/quicksettings": {
+        "format": "⚙",
+        "tooltip-format": "Quick Settings &amp; System Controls",
+        "on-click": "desktop-quick-settings"
+    },
+
+    "clock": {
+        "format": "󰥔 {:%I:%M %p}",
+        "format-alt": "󰃭 {:%a, %b %d, %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#bb9af7'><b>{}</b></span>",
+                "days": "<span color='#c0caf5'><b>{}</b></span>",
+                "weeks": "<span color='#7dcfff'><b>W{}</b></span>",
+                "weekdays": "<span color='#f7768e'><b>{}</b></span>",
+                "today": "<span color='#16161e' background='#f7768e'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "custom/power": {
+        "format": "⏻",
+        "tooltip-format": "Power Menu",
+        "on-click": "desktop-power-menu"
+    }
+}

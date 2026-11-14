@@ -1,0 +1,29 @@
+# Sensitive credentials & private keys
+*.key
+*.pem
+*.p12
+*.crt
+id_rsa
+id_ed25519
+*token*
+*secret*
+*.lock
+*.log
+
+# Environment & local overrides
+.env
+.env.local
+*.local
+
+# Cache and build artifacts
+__pycache__/
+*.py[cod]
+.cache/
+tmp/
+node_modules/
+
+# OS and Editor noise
+.DS_Store
+*.swp
+*.swo
+*~

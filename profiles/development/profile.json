@@ -1,0 +1,23 @@
+{
+  "name": "development",
+  "display_name": "Full Desktop + Complete Engineering Suite",
+  "description": "All components of the Default profile extended with a full mobile and full-stack software development environment (Node.js LTS, pnpm, Python uv/pipx, Android Studio/SDK, Neovim LazyVim stack, and VS Code).",
+  "target_compositor": "niri",
+  "shell_framework": "quickshell",
+  "theme": "catppuccin-mocha",
+  "modules": [
+    "system",
+    "environment",
+    "niri",
+    "modesty",
+    "terminal",
+    "launcher",
+    "shell",
+    "gtk",
+    "lockscreen",
+    "file-manager",
+    "browsers",
+    "services",
+    "development"
+  ]
+}

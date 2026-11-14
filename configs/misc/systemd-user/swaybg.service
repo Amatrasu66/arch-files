@@ -1,0 +1,12 @@
+[Unit]
+Description=Wallpaper daemon for Niri / Wayland
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+ExecStart=/usr/bin/swaybg -i %h/.config/backgrounds/wallpaper.jpg -m fill
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

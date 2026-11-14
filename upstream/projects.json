@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Modesty",
+    "repository": "https://github.com/sandeepbist/Modesty.git",
+    "base_commit": "690af8b",
+    "branch": "main",
+    "local_path": "~/App/Modesty",
+    "symlink_target": "~/.config/quickshell",
+    "role": "Primary Wayland desktop shell, Dynamic Island, control center, lock screen, and launcher framework.",
+    "status": "Active (Heavily customized locally)",
+    "customizations": [
+      "AI Agent Pill module and status integration (modules/island/AiAgentPill.qml, scripts/ai-agent-status.py)",
+      "Dynamic Island lockscreen PAM integration (modules/lock/LockContent.qml)",
+      "Control Center and submenu enhancements (Bluetooth, Wi-Fi, Sound, Display)",
+      "Catppuccin Mocha palette color tuning (theme/Palette.js, theme/Theme.qml)",
+      "Unified shortcut sync service (scripts/sync_shortcuts.py, modules/shortcuts/)",
+      "Local patch file: upstream/modesty-customizations.patch"
+    ]
+  },
+  {
+    "name": "dynamic-island-hyprland",
+    "repository": "https://github.com/St0rmosu/dynamic-island-hyprland.git",
+    "base_commit": "fdbc40f",
+    "branch": "main",
+    "local_path": "~/customization/references/dynamic-island-hyprland",
+    "role": "Reference implementation for dynamic island geometry and lockscreen PAM integration.",
+    "status": "Reference / Inactive in production"
+  },
+  {
+    "name": "Waybar",
+    "repository": "https://github.com/Alexays/Waybar.git",
+    "role": "Former desktop bar, migrated to Modesty QuickShell.",
+    "status": "Archived / Migrated (configs preserved in configs/waybar/)"
+  },
+  {
+    "name": "hyprdots",
+    "repository": "https://github.com/prasanthrangan/hyprdots.git",
+    "role": "Historical reference for Arch Linux theming and visual design.",
+    "status": "Historical reference only"
+  }
+]

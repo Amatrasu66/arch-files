@@ -1,0 +1,132 @@
+#!/usr/bin/env bash
+# ~/.local/bin/desktop-quick-settings - Refined Compact Quick Settings Control Center
+set -euo pipefail
+
+# Dynamic status detection
+VOL_STATUS=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null || echo "Volume: N/A")
+MUTE_FLAG=""
+if echo "$VOL_STATUS" | grep -q "MUTED"; then
+    MUTE_FLAG=" [MUTED]"
+fi
+VOL_NUM=$(echo "$VOL_STATUS" | awk '{print int($2 * 100)}')
+AUDIO_LABEL="󰕾  Audio Controls (${VOL_NUM}%${MUTE_FLAG})"
+
+MAIN_MENU="󰤨  Wi-Fi Network (nmtui)
+󰂯  Bluetooth Devices (bluetoothctl)
+${AUDIO_LABEL}
+󰍹  Display Settings (HDMI-A-1)
+  System Settings (Thunar, Niri, Themes)
+⏻  Power & Session Menu"
+
+CHOICE=$(printf "%s\n" "$MAIN_MENU" | fuzzel --dmenu --prompt="Quick Settings: " --lines=6 --width=34)
+
+case "$CHOICE" in
+    *"Wi-Fi"*)
+        kitty --class floating_terminal --title "Wi-Fi & Network Manager" -e nmtui
+        ;;
+
+    *"Bluetooth"*)
+        kitty --class floating_terminal --title "Bluetooth Device Manager" -e bluetoothctl
+        ;;
+
+    *"Audio"*)
+        AUDIO_OPTS="󰝟 Toggle Mute (TV Audio Sink)
+󰍬 Toggle Microphone Mute
+󰝝 Volume Up (+5%)
+󰝞 Volume Down (-5%)
+󰕾 Preset: 80% Volume
+󰕾 Preset: 60% Volume
+󰕾 Preset: 40% Volume (Recommended)
+󰕾 Preset: 20% Volume
+󰋋 Inspect PipeWire Status (Floating)"
+
+        AUDIO_ACTION=$(printf "%s\n" "$AUDIO_OPTS" | fuzzel --dmenu --prompt="Audio Settings: " --lines=9 --width=34)
+        case "$AUDIO_ACTION" in
+            *"Toggle Mute (TV"*)
+                wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+                ;;
+            *"Toggle Microphone"*)
+                wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+                ;;
+            *"+5%"*)
+                wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ -l 1.0
+                ;;
+            *"-5%"*)
+                wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-
+                ;;
+            *"80%"*)
+                wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.80
+                ;;
+            *"60%"*)
+                wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.60
+                ;;
+            *"40%"*)
+                wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.40
+                ;;
+            *"20%"*)
+                wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.20
+                ;;
+            *"Inspect PipeWire"*)
+                kitty --class floating_terminal --title "PipeWire Audio Routing" -e sh -c 'wpctl status; echo -e "\nPress Enter to close..."; read -r _'
+                ;;
+        esac
+        ;;
+
+    *"Display"*)
+        DISP_OPTS="󰍹 View Outputs & Display Modes (HDMI-A-1)
+󰍹 Set Scale: 1.4x (Default Recommended)
+󰍹 Set Scale: 1.25x
+󰍹 Set Scale: 1.0x (Native 1080p)"
+
+        DISP_ACTION=$(printf "%s\n" "$DISP_OPTS" | fuzzel --dmenu --prompt="Display Settings: " --lines=4 --width=36)
+        case "$DISP_ACTION" in
+            *"View Outputs"*)
+                kitty --class floating_terminal --title "Display Configuration" -e sh -c 'niri msg outputs; echo -e "\nPress Enter to close..."; read -r _'
+                ;;
+            *"1.4x"*)
+                niri msg output HDMI-A-1 scale 1.4
+                ;;
+            *"1.25x"*)
+                niri msg output HDMI-A-1 scale 1.25
+                ;;
+            *"1.0x"*)
+                niri msg output HDMI-A-1 scale 1.0
+                ;;
+        esac
+        ;;
+
+    *"System Settings"*)
+        SYS_OPTS="󰋜 File Manager Preferences (Thunar Settings - GUI)
+󰌌 Show Hotkeys & Shortcuts Overlay
+󰘳 Edit Niri Window Manager Config (config.kdl)
+󰏘 Edit Waybar Status Bar Config
+󰄛 Edit Kitty Terminal Config"
+
+        SYS_ACTION=$(printf "%s\n" "$SYS_OPTS" | fuzzel --dmenu --prompt="System Settings: " --lines=5 --width=40)
+        case "$SYS_ACTION" in
+            *"Thunar Settings"*)
+                thunar-settings &
+                ;;
+            *"Hotkeys"*)
+                niri msg action show-hotkey-overlay
+                ;;
+            *"Niri Window Manager"*)
+                kitty --class floating_terminal --title "Niri Config Editor" -e nano "$HOME/.config/niri/config.kdl"
+                ;;
+            *"Waybar"*)
+                kitty --class floating_terminal --title "Waybar Config Editor" -e nano "$HOME/.config/waybar/config.jsonc"
+                ;;
+            *"Kitty"*)
+                kitty --class floating_terminal --title "Kitty Config Editor" -e nano "$HOME/.config/kitty/kitty.conf"
+                ;;
+        esac
+        ;;
+
+    *"Power"*)
+        desktop-power-menu
+        ;;
+
+    *)
+        exit 0
+        ;;
+esac

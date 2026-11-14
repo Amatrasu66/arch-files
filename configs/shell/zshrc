@@ -1,0 +1,74 @@
+# ~/.zshrc - Minimal, fast daily-driver Zsh configuration
+
+# 1. Environment & PATH handling (deduplicated automatically by Zsh)
+typeset -U path PATH
+path=("$HOME/.local/bin" $path)
+export PATH
+export ANDROID_HOME="$HOME/Android/Sdk"
+export GTK_THEME="catppuccin-mocha-mauve-standard+default"
+export XCURSOR_THEME="catppuccin-mocha-mauve-cursors"
+export XCURSOR_SIZE="24"
+export QT_QPA_PLATFORM="wayland"
+export QT_STYLE_OVERRIDE="Fusion"
+
+# 2. History configuration
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt EXTENDED_HISTORY          # Write timestamp and elapsed time to history
+setopt SHARE_HISTORY             # Share history across concurrent terminals
+setopt HIST_EXPIRE_DUPS_FIRST    # Prune duplicate entries first when limit reached
+setopt HIST_IGNORE_DUPS          # Do not record immediate consecutive duplicates
+setopt HIST_IGNORE_SPACE         # Do not record commands beginning with a space
+setopt HIST_REDUCE_BLANKS        # Remove redundant whitespace
+
+# 3. Built-in Completion (standard, safe compinit)
+autoload -Uz compinit
+compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case-insensitive matching
+zstyle ':completion:*' menu select                         # Interactive completion menu
+
+# 4. Essential Navigation & Directory Options
+setopt AUTO_CD                   # Type directory name to cd
+setopt AUTO_PUSHD                # Push directories onto stack
+setopt PUSHD_IGNORE_DUPS         # Do not store duplicate stack entries
+
+# 5. Core Aliases (Preserved from Bash)
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias ll='ls -la'
+alias la='ls -A'
+
+# 6. Responsive, Lightweight Prompt (0ms latency, no subshells)
+autoload -Uz colors && colors
+PROMPT='%B%F{blue}[%n@%m %1~]%f%b%# '
+
+# 7. Fuzzy Finder (fzf) Integration
+if [[ -f /usr/share/fzf/key-bindings.zsh ]]; then
+    source /usr/share/fzf/key-bindings.zsh
+fi
+if [[ -f /usr/share/fzf/completion.zsh ]]; then
+    source /usr/share/fzf/completion.zsh
+fi
+
+# 8. Zsh Autosuggestions
+if [[ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+    export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#585b70'
+    export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    bindkey '^[[C' forward-char
+fi
+
+# 9. Zsh Syntax Highlighting (Must be sourced after other plugins and completion)
+if [[ -f /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# 10. Fastfetch startup on interactive Kitty terminal (Disabled: run fastfetch manually when desired)
+# if [[ -o interactive && -t 1 && -z "$FASTFETCH_RUN" ]]; then
+#     export FASTFETCH_RUN=1
+#     command -v fastfetch >/dev/null && fastfetch
+# fi
+
+# opencode
+export PATH=$HOME/.opencode/bin:$PATH

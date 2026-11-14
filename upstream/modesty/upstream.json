@@ -1,0 +1,12 @@
+{
+  "name": "Modesty",
+  "upstream_url": "https://github.com/sandeepbist/Modesty.git",
+  "base_commit": "690af8b5905b166997ae0c6c57c44e7ad1f7aef6",
+  "short_commit": "690af8b",
+  "branch": "main",
+  "target_dir": "$HOME/.config/quickshell",
+  "patch_file": "patches/modesty-customizations.patch",
+  "additions_dir": "additions",
+  "description": "Dynamic Island, control center, and desktop shell for Wayland compositors (QuickShell / QtQuick / QML).",
+  "license": "GPL-3.0"
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=Wayland Clipboard History Watcher (cliphist)
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+Type=simple
+Environment="PATH=%h/.local/bin:/usr/local/bin:/usr/bin"
+ExecStart=/usr/bin/wl-paste --watch cliphist store
+Restart=on-failure
+RestartSec=2s
+Slice=app.slice
+
+[Install]
+WantedBy=graphical-session.target

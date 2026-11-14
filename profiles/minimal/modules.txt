@@ -1,0 +1,6 @@
+system
+environment
+niri
+terminal
+launcher
+shell

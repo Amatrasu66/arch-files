@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# ~/.local/bin/desktop-power-menu - Clean power menu using Fuzzel
+
+CHOICE=$(printf "⏻  Shutdown\n  Restart\n󰍃  Logout\n󰜺  Cancel" | fuzzel --dmenu --prompt="Power: " --lines=4 --width=22)
+
+case "$CHOICE" in
+    *"Shutdown"*)
+        systemctl poweroff
+        ;;
+    *"Restart"*)
+        systemctl reboot
+        ;;
+    *"Logout"*)
+        niri msg action quit --skip-confirmation
+        ;;
+    *)
+        exit 0
+        ;;
+esac

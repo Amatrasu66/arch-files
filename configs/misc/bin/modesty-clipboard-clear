@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# ~/.local/bin/modesty-clipboard-clear - Safely wipe cliphist clipboard history
+# Phase 10: Lightweight Wayland Clipboard Manager
+
+set -u
+
+export PATH="$HOME/.local/bin:$PATH"
+
+if ! command -v cliphist >/dev/null 2>&1; then
+    exit 1
+fi
+
+choice=$(printf 'Cancel (Keep History)\nConfirm: Wipe All Clipboard History' | fuzzel --dmenu \
+    --prompt="Clear History?  ❯ " \
+    --placeholder="History wipe is permanent!" \
+    --lines=2 \
+    --width=38 2>/dev/null) || true
+
+if [[ "${choice:-}" == "Confirm: Wipe All Clipboard History" ]]; then
+    cliphist wipe
+    if command -v notify-send >/dev/null 2>&1; then
+        notify-send -a "Modesty" -i "edit-clear" "Clipboard History" "All saved clipboard entries have been cleared."
+    fi
+fi

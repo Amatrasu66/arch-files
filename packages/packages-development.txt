@@ -1,0 +1,14 @@
+android-studio
+android-tools
+android-udev
+git
+lazygit
+neovim
+nodejs-lts-krypton
+npm
+pnpm
+python-pipx
+tree-sitter-cli
+uv
+vim
+visual-studio-code-bin

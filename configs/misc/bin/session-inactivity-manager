@@ -1,0 +1,231 @@
+#!/usr/bin/env bash
+# ~/.local/bin/session-inactivity-manager
+# Inactivity & Session Power Management Suite for Arch Linux + Niri
+# Handles: 10m lock, 1h suspend, 6h clean shutdown (persisting across suspend)
+set -euo pipefail
+
+STATE_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}/session"
+mkdir -p "$STATE_DIR"
+
+LAST_ACTIVE_FILE="$STATE_DIR/last_activity"
+IDLE_SINCE_FILE="$STATE_DIR/idle_since"
+SHUTDOWN_PID_FILE="$STATE_DIR/shutdown_countdown_pid"
+SUSPEND_TIMESTAMP_FILE="$STATE_DIR/suspended_at"
+BOOT_ID_FILE="$STATE_DIR/boot_id"
+SESSION_ID_FILE="$STATE_DIR/session_id"
+LOG_FILE="$STATE_DIR/inactivity.log"
+
+log() {
+    local msg="[$(date '+%Y-%m-%d %H:%M:%S')] $*"
+    echo "$msg" >> "$LOG_FILE"
+}
+
+get_now() {
+    date +%s
+}
+
+get_boot_id() {
+    cat /proc/sys/kernel/random/boot_id 2>/dev/null || echo unknown
+}
+
+get_session_id() {
+    echo "${XDG_SESSION_ID:-unknown}"
+}
+
+# State files live in tmpfs and can outlive a login or be carried across a
+# suspend. If the boot or session changed, old timestamps must never be used
+# to trigger a suspend/shutdown.
+ensure_current_state() {
+    local boot_id session_id
+    boot_id=$(get_boot_id)
+    session_id=$(get_session_id)
+
+    if [[ ! -f "$BOOT_ID_FILE" || ! -f "$SESSION_ID_FILE" ]] ||
+       [[ "$(cat "$BOOT_ID_FILE" 2>/dev/null)" != "$boot_id" ]] ||
+       [[ "$(cat "$SESSION_ID_FILE" 2>/dev/null)" != "$session_id" ]]; then
+        echo "$boot_id" > "$BOOT_ID_FILE"
+        echo "$session_id" > "$SESSION_ID_FILE"
+        get_now > "$LAST_ACTIVE_FILE"
+        rm -f "$IDLE_SINCE_FILE" "$SHUTDOWN_PID_FILE" "$SUSPEND_TIMESTAMP_FILE" 2>/dev/null || true
+        log "Stale session state detected (boot/session changed). State reset."
+    fi
+}
+
+get_last_active() {
+    if [[ -f "$LAST_ACTIVE_FILE" ]]; then
+        cat "$LAST_ACTIVE_FILE"
+    else
+        get_now
+    fi
+}
+
+update_activity() {
+    local now
+    now=$(get_now)
+    echo "$now" > "$LAST_ACTIVE_FILE"
+    rm -f "$IDLE_SINCE_FILE" 2>/dev/null || true
+    cancel_shutdown_countdown
+    log "User activity detected. Inactivity timers reset."
+}
+
+cancel_shutdown_countdown() {
+    if [[ -f "$SHUTDOWN_PID_FILE" ]]; then
+        local pid
+        pid=$(cat "$SHUTDOWN_PID_FILE" 2>/dev/null || echo "")
+        if [[ -n "$pid" ]] && kill -0 "$pid" 2>/dev/null; then
+            kill "$pid" 2>/dev/null || true
+            log "Cancelled pending shutdown countdown (PID $pid)."
+            notify-send -u normal -a "Session Power Manager" \
+                "Inactivity Shutdown Cancelled" \
+                "User activity detected. The scheduled shutdown has been averted." -t 5000 2>/dev/null || true
+        fi
+        rm -f "$SHUTDOWN_PID_FILE"
+    fi
+}
+
+do_lock() {
+    log "Executing screen lock..."
+    "lock-session"
+}
+
+do_suspend() {
+    log "Initiating system suspend..."
+    do_lock
+    if [[ "${SESSION_POWER_TEST_MODE:-0}" == "1" ]]; then
+        log "[TEST MODE] Simulated 'systemctl suspend' bypassed."
+        notify-send -u normal -a "Session Power Manager" "[TEST MODE] Simulated Suspend" "System would suspend now." 2>/dev/null || true
+    else
+        systemctl suspend
+    fi
+}
+
+do_poweroff() {
+    log "Executing clean system poweroff due to 6 hours of continuous inactivity..."
+    do_lock
+    if [[ "${SESSION_POWER_TEST_MODE:-0}" == "1" ]]; then
+        log "[TEST MODE] Simulated 'systemctl poweroff' bypassed."
+        notify-send -u critical -a "Session Power Manager" "[TEST MODE] Simulated Shutdown" "Clean shutdown would execute now." 2>/dev/null || true
+    else
+        systemctl poweroff
+    fi
+}
+
+start_shutdown_countdown() {
+    cancel_shutdown_countdown
+    log "Triggering 60-second pre-shutdown warning..."
+
+    notify-send -u critical -a "Session Power Manager" \
+        "⚠ Prolonged Inactivity Warning" \
+        "The computer has been inactive for 6 hours.\nClean system shutdown in 60 seconds.\nMove mouse or press any key to cancel." \
+        -t 58000 2>/dev/null || true
+
+    # Run background countdown
+    (
+        sleep 60
+        # If still exists and not cancelled, proceed with clean poweroff
+        if [[ -f "$SHUTDOWN_PID_FILE" ]]; then
+            rm -f "$SHUTDOWN_PID_FILE"
+            do_poweroff
+        fi
+    ) &
+    local countdown_pid=$!
+    echo "$countdown_pid" > "$SHUTDOWN_PID_FILE"
+    log "Shutdown countdown started with PID $countdown_pid"
+}
+
+action="${1:-status}"
+
+ensure_current_state
+
+case "$action" in
+    on-init)
+        update_activity
+        log "Inactivity manager initialized."
+        ;;
+
+    on-user-activity)
+        update_activity
+        ;;
+
+    on-idle-10m)
+        now=$(get_now)
+        if [[ ! -f "$IDLE_SINCE_FILE" ]]; then
+            # Started idle approximately 600 seconds ago
+            echo "$(( now - 600 ))" > "$IDLE_SINCE_FILE"
+        fi
+        log "10-minute inactivity threshold reached. Locking screen."
+        do_lock
+        ;;
+
+    on-idle-1h)
+        log "60-minute inactivity threshold reached. Suspending system."
+        do_suspend
+        ;;
+
+    on-idle-6h-warning)
+        log "21540s (5h 59m) inactivity threshold reached. Displaying shutdown warning."
+        start_shutdown_countdown
+        ;;
+
+    on-idle-6h-shutdown)
+        log "21600s (6h) inactivity timeout reached."
+        if [[ -f "$SHUTDOWN_PID_FILE" ]]; then
+            # Countdown is handling it or ready
+            log "Shutdown countdown is currently active."
+        else
+            do_poweroff
+        fi
+        ;;
+
+    on-before-sleep)
+        log "System preparing for sleep (logind hook). Locking screen and saving timestamp."
+        get_now > "$SUSPEND_TIMESTAMP_FILE"
+        do_lock
+        ;;
+
+    on-resume)
+        now=$(get_now)
+        last_act=$(get_last_active)
+        elapsed=$(( now - last_act ))
+        log "System resumed from suspend. Current time: $now, Last active: $last_act (Total elapsed: ${elapsed}s / $(( elapsed / 60 ))min)."
+
+        # Check if total inactivity across the suspend period exceeds 6 hours (21600 seconds)
+        if (( elapsed >= 21600 )); then
+            log "Elapsed inactivity (${elapsed}s) >= 21600s (6h). Triggering pre-shutdown countdown."
+            start_shutdown_countdown
+        else
+            log "Elapsed inactivity (${elapsed}s) < 21600s. Resuming normal session."
+        fi
+        ;;
+
+    on-lock)
+        log "Logind lock signal received."
+        do_lock
+        ;;
+
+    status)
+        now=$(get_now)
+        last_act=$(get_last_active)
+        elapsed=$(( now - last_act ))
+        echo "=== Session Inactivity Status ==="
+        echo "Current Time:        $(date -d "@$now" '+%Y-%m-%d %H:%M:%S')"
+        echo "Last User Activity:  $(date -d "@$last_act" '+%Y-%m-%d %H:%M:%S')"
+        echo "Elapsed Inactivity:  ${elapsed}s ($(( elapsed / 60 )) minutes)"
+        if [[ -f "$SHUTDOWN_PID_FILE" ]]; then
+            echo "Shutdown Warning:    ACTIVE (PID: $(cat "$SHUTDOWN_PID_FILE"))"
+        else
+            echo "Shutdown Warning:    Inactive"
+        fi
+        qs_health=$(quickshell ipc call island health 2>/dev/null || echo "")
+        if [[ "$qs_health" =~ \"locked\":true ]]; then
+            echo "Screen Locker:       Active (Locked - Modesty Dynamic Island)"
+        else
+            echo "Screen Locker:       Inactive (Unlocked)"
+        fi
+        ;;
+
+    *)
+        echo "Usage: $0 {on-init|on-user-activity|on-idle-10m|on-idle-1h|on-idle-6h-warning|on-idle-6h-shutdown|on-before-sleep|on-resume|on-lock|status}"
+        exit 1
+        ;;
+esac
