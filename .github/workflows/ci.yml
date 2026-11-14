@@ -21,7 +21,7 @@ jobs:
 
       - name: Run Portable Validation Suite
         run: |
-          bash scripts/validate.sh
+          bash -x scripts/validate.sh
 
   arch-validation:
     name: Target Environment Validation (Arch Linux)
@@ -38,4 +38,4 @@ jobs:
 
       - name: Run Arch Target-Environment Validation
         run: |
-          bash scripts/validate-arch.sh
+          bash -x scripts/validate-arch.sh
