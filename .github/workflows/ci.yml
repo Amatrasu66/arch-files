@@ -23,16 +23,16 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: "1"
         run: |
-          python3 -c "
-          import subprocess
-          res = subprocess.run(['bash', 'scripts/validate.sh'], capture_output=True, text=True)
-          with open(r'$GITHUB_STEP_SUMMARY', 'w') as f:
-              f.write('### Portable Validation Output\n```\n' + res.stdout + '\n' + res.stderr + '\n```')
-          print(res.stdout)
-          if res.stderr:
-              print(res.stderr)
-          exit(res.returncode)
-          "
+          set +e
+          bash scripts/validate.sh > /tmp/v.log 2>&1
+          RC=$?
+          set -e
+          cat /tmp/v.log
+          if [ $RC -ne 0 ]; then
+            first_err=$(grep -m 1 -E "\[ERROR\]|error:" /tmp/v.log || echo "Unknown validation error")
+            echo "::error title=Validation Failure::$first_err"
+            exit $RC
+          fi
 
   arch-validation:
     name: Target Environment Validation (Arch Linux)
@@ -49,13 +49,4 @@ jobs:
 
       - name: Run Arch Target-Environment Validation
         run: |
-          python3 -c "
-          import subprocess
-          res = subprocess.run(['bash', 'scripts/validate-arch.sh'], capture_output=True, text=True)
-          with open(r'$GITHUB_STEP_SUMMARY', 'w') as f:
-              f.write('### Arch Validation Output\n```\n' + res.stdout + '\n' + res.stderr + '\n```')
-          print(res.stdout)
-          if res.stderr:
-              print(res.stderr)
-          exit(res.returncode)
-          "
+          bash scripts/validate-arch.sh
