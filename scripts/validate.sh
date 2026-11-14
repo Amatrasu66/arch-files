@@ -110,7 +110,7 @@ LEAKED_PATHS=0
 while IFS= read -r match; do
     log_error "Hardcoded path found: $match"
     LEAKED_PATHS=$((LEAKED_PATHS + 1))
-done < <(grep -rn --exclude="validate.sh" --exclude="validate-arch.sh" "$TARGET_USER_PATTERN" "$CONFIGS_DIR" "$REPO_ROOT/scripts" "$SYSTEM_DIR" "$UPSTREAM_DIR/modesty/additions" "$UPSTREAM_DIR/modesty/patches" 2>/dev/null || true)
+done < <(grep -rn --exclude="validate.sh" --exclude="validate-arch.sh" "$TARGET_USER_PATTERN" "$CONFIGS_DIR" "$REPO_ROOT/scripts" "$SYSTEM_DIR" "$UPSTREAM_DIR/modesty/additions" "$UPSTREAM_DIR/modesty/patches" --binary-files=without-match 2>/dev/null || true)
 
 if [[ $LEAKED_PATHS -eq 0 ]]; then
     log_success "Zero hardcoded user paths in active configurations and scripts."

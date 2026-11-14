@@ -34,7 +34,7 @@ jobs:
 
       - name: Install Target Validation Dependencies
         run: |
-          pacman -Syu --noconfirm --needed bash python niri systemd
+          pacman -Syu --noconfirm --needed bash python niri systemd swaybg swayidle wl-clipboard
 
       - name: Run Arch Target-Environment Validation
         run: |
