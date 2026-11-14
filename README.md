@@ -51,7 +51,7 @@ The desktop environment combines Niri's infinite scrollable tiling strip with Mo
 | Desktop Overview | Control Center |
 | :---: | :---: |
 | ![Desktop Reference](assets/screenshots/00_desktop_reference.png) | ![Quick Settings Main](assets/screenshots/05_quicksettings_main.png) |
-| *Niri scrollable workspace with Modesty Dynamic Island and laundry.jpg wallpaper* | *Full quick settings panel (Wi-Fi, Bluetooth, Audio, Display, and Power)* |
+| *Niri scrollable workspace with Modesty Dynamic Island (wallpaper shown as reference)* | *Full quick settings panel (Wi-Fi, Bluetooth, Audio, Display, and Power)* |
 
 | Dynamic Island Hovered | Media Player Card |
 | :---: | :---: |
@@ -157,7 +157,7 @@ arch-files/
 ├── themes/                    # Catppuccin Mocha palette specifications
 ├── upstream/                  # Upstream projects, patches & custom additions
 │   └── modesty/               # Complete Modesty customization package (patch + 11 additions)
-└── assets/                    # 23 verified screenshots & desktop wallpapers
+└── assets/                    # 23 verified screenshots & wallpaper instructions
 ```
 
 ---
@@ -308,7 +308,7 @@ To completely remove all managed symlinks without deleting your personal unmanag
 * **Theme Colors**:
   The Catppuccin Mocha color palette is defined in `themes/catppuccin-mocha.json` and mirrored in `configs/terminal/kitty.conf`, `configs/launcher/fuzzel.ini`, and `upstream/modesty/additions/`.
 * **Wallpaper**:
-  The active wallpaper is stored in `assets/wallpapers/laundry.jpg` and deployed to `~/.config/backgrounds/wallpaper.jpg`. To switch wallpapers, replace this file or run `swaybg -i /path/to/wallpaper.jpg -m fill`.
+  Third-party wallpapers without verified open redistribution licenses are excluded from the public repository in compliance with open-source licensing. The desktop expects a wallpaper at `~/.config/backgrounds/wallpaper.jpg`. Place your preferred image at this path, or configure Swaybg via `~/.config/systemd/user/swaybg.service` (`swaybg -i /path/to/wallpaper.jpg -m fill`). See [assets/wallpapers/README.md](assets/wallpapers/README.md) for details.
 * **Keyboard Shortcuts**:
   All keybindings are centralized in `configs/niri/config.kdl`. See [docs/KEYBINDINGS.md](docs/KEYBINDINGS.md) for a complete table of shortcuts.
 
