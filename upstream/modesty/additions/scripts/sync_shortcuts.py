@@ -410,8 +410,9 @@ def parse_niri_binds():
         # 6. Lookup in known action map
         if cmd in action_map:
             name, desc, cat = action_map[cmd]
+            action_id_suffix = cmd.replace(';', '').replace(' ', '_').replace('"', '')
             shortcuts.append({
-                "id": f"niri.action.{cmd.replace(';', '').replace(' ', '_').replace('\"', '')}",
+                "id": f"niri.action.{action_id_suffix}",
                 "keys": keys_list,
                 "action": name,
                 "description": desc,
