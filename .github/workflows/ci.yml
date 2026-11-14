@@ -29,6 +29,8 @@ jobs:
           set -e
           cat /tmp/v.log
           if [ $RC -ne 0 ]; then
+            py_err=$(python3 -m py_compile upstream/modesty/additions/scripts/sync_shortcuts.py 2>&1 || true)
+            echo "::error title=PyCompile Error::$py_err"
             first_err=$(grep -m 1 -E "\[ERROR\]|error:" /tmp/v.log || echo "Unknown validation error")
             echo "::error title=Validation Failure::$first_err"
             exit $RC
